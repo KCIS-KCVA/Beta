@@ -1,0 +1,149 @@
+{
+  "sport": "volleyball",
+  "sportLabel": {
+    "en": "VOLLEYBALL",
+    "zh": "排球"
+  },
+  "title": {
+    "en": "New KCVA Event",
+    "zh": "新的 KCVA 赛事"
+  },
+  "subtitle": {
+    "en": "High School Sport Open Tournament",
+    "zh": "高中运动公开锦标赛"
+  },
+  "dates": [
+    {
+      "month": "Jun",
+      "day": "01"
+    }
+  ],
+  "dateRangeLabel": "2027/06/01",
+  "deadlines": {
+    "registrationDeadline": "2027-05-01T23:59:59+08:00",
+    "ticketDeadline": "2027-05-25T23:59:59+08:00",
+    "eventDate": "2027-06-01T08:00:00+08:00",
+    "resultsReleaseDate": "2027-06-02T00:00:00+08:00"
+  },
+  "venue": {
+    "name": {
+      "en": "Venue name",
+      "zh": "场馆名称"
+    },
+    "address": {
+      "en": "Venue address",
+      "zh": "场馆地址"
+    },
+    "appleMapsUrl": "https://maps.apple.com/",
+    "googleMapsUrl": "https://www.google.com/maps/",
+    "amapUrl": "https://uri.amap.com/"
+  },
+  "description": {
+    "en": [
+      "Replace this text with the event introduction. Keep event copy concise, welcoming, and specific to this session.",
+      "Add registration details, format information, and anything players need to know before they arrive."
+    ],
+    "zh": [
+      "请将此文本替换为赛事介绍。赛事文案应简洁、友好，并清晰说明本站赛事的信息。",
+      "补充报名方式、比赛赛制，以及球员到场前需要了解的事项。"
+    ]
+  },
+  "actions": {
+    "playerRegistrationUrl": "https://example.com/player-registration",
+    "volunteerRegistrationUrl": "",
+    "buyTicketsUrl": "",
+    "gameReplayUrl": "",
+    "livePhotoGalleryUrl": "https://example.com/gallery"
+  },
+  "organizers": [
+    {
+      "name": "Organizer Name",
+      "role": {
+        "en": "Tournament Director",
+        "zh": "赛事总监"
+      }
+    },
+    {
+      "name": "Host Name",
+      "role": {
+        "en": "Master of Ceremonies",
+        "zh": "主持人"
+      }
+    },
+    {
+      "name": "Media Name",
+      "role": {
+        "en": "Media & Technology Lead",
+        "zh": "媒体技术主管"
+      }
+    },
+    {
+      "name": "Business Name",
+      "role": {
+        "en": "Business Liaison",
+        "zh": "商务统筹"
+      }
+    },
+    {
+      "name": "Operations Name",
+      "role": {
+        "en": "On-site Operations Lead",
+        "zh": "现场运营主管"
+      }
+    }
+  ],
+  "standings": {
+    "divisions": [
+      {
+        "id": "open",
+        "title": {
+          "en": "OPEN",
+          "zh": "公开组"
+        },
+        "rows": [
+          {
+            "position": 1,
+            "team": "Team One",
+            "played": 0,
+            "won": 0,
+            "lost": 0,
+            "setsOrDiff": "0-0",
+            "points": 0
+          },
+          {
+            "position": 2,
+            "team": "Team Two",
+            "played": 0,
+            "won": 0,
+            "lost": 0,
+            "setsOrDiff": "0-0",
+            "points": 0
+          }
+        ]
+      }
+    ]
+  },
+  "volunteers": [
+    {
+      "name": "Volunteer Name",
+      "role": {
+        "en": "Media Tech Lead, KSVG",
+        "zh": "媒体技术主管, KSVG"
+      }
+    },
+    {
+      "name": "Volunteer Name",
+      "role": {
+        "en": "Photographer, KSVG",
+        "zh": "赛事摄影师, KSVG"
+      }
+    },
+    {
+      "name": "Volunteer Name",
+      "role": {
+        "en": "Event Operations Volunteer, KCVA",
+        "zh": "赛事运营志愿者, KCVA"
+      }
+    }
+  ]
+}

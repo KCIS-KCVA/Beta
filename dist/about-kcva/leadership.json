@@ -1,0 +1,13 @@
+[
+  { "name": "Benze.W", "role": { "en": "Founder & CEO", "zh": "创始人兼首席执行官" }, "category": "executive" },
+  { "name": "Tony.J", "role": { "en": "Chief Technology Officer (CTO)", "zh": "首席技术官" }, "category": "executive" },
+  { "name": "Katherine.Y", "role": { "en": "Chief Operating Officer (COO)", "zh": "首席运营官" }, "category": "executive" },
+  { "name": "Ivory.Z", "role": { "en": "Chief Commercial Officer (CCO)", "zh": "首席商务官" }, "category": "executive" },
+  { "name": "Susanna.Y", "role": { "en": "CMO · Business Lead", "zh": "首席营销官兼商务主管" }, "category": "business" },
+  { "name": "Jiarui.C", "role": { "en": "Business Operations Staff", "zh": "商务执行" }, "category": "business" },
+  { "name": "Justin.P", "role": { "en": "Business Operations Staff", "zh": "商务执行" }, "category": "business" },
+  { "name": "Abby.W", "role": { "en": "Master of Ceremonies · Operations Staff", "zh": "赛事主持与现场统筹" }, "category": "operations" },
+  { "name": "Courtney.Z", "role": { "en": "Master of Ceremonies · Operations Staff", "zh": "赛事主持与现场统筹" }, "category": "operations" },
+  { "name": "Chris.D", "role": { "en": "On-Site Operations Specialist", "zh": "现场赛事运营" }, "category": "operations" },
+  { "name": "Alissa", "role": { "en": "Operations Associate", "zh": "赛事运营统筹" }, "category": "operations" }
+]

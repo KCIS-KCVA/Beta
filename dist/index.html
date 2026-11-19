@@ -4,116 +4,129 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta name="description" content="KCVA — a player-driven volleyball and ultimate frisbee league built on passion, teamwork, and a shared love for the game.">
-    <title>Home - Events | KCVA</title>
+    <meta name="description" content="KCVA is a high school varsity sports league building competitive volleyball and ultimate frisbee tournaments for school teams.">
+    <title>Home | KCVA</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/assets/css/main.css">
     <script defer src="/assets/js/i18n.js"></script>
     <script defer src="/assets/js/layout.js"></script>
+    <script defer src="/assets/js/events-data.js"></script>
+    <script defer src="/assets/js/home.js"></script>
   </head>
-  <body data-title-key="nav.home">
+  <body data-page-title-key="title.home">
     <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
     <div id="global-header"></div>
 
     <main id="main" tabindex="-1">
-      <section class="portal-hero">
-        <div class="portal-hero-bg" aria-hidden="true"></div>
+      <section class="portal-hero home-hero">
+        <div class="portal-hero-bg" id="home-hero-bg" aria-hidden="true"></div>
         <div class="shell">
           <div class="portal-content">
             <p class="eyebrow" data-i18n="home.eyebrow">KC VARSITY ASSOCIATION</p>
-            <h1 class="portal-title">
-              <span class="portal-title-lead" data-i18n="home.titleLine1">Built by players.</span>
-              <span data-i18n="home.titleLine2">Bound by the game.</span>
+            <h1 class="portal-title home-hero-title" data-i18n="home.heroTitle">
+              HIGH SCHOOL VARSITY SPORTS LEAGUE
             </h1>
             <p class="portal-body" data-i18n="home.body">
-              A player-driven volleyball and ultimate frisbee platform bringing together schools,
-              athletes, and a community that shows up for every point.
+              KCVA is a student-driven high school varsity sports league building competitive
+              volleyball and ultimate frisbee tournaments for school teams.
             </p>
-            <div class="portal-actions">
-              <a class="btn btn-solid" href="/events/volleywoods-25-26/" data-i18n="home.ctaEvent">
-                Explore Volleywoods
+            <div class="portal-actions home-actions">
+              <a class="btn btn-solid" href="/events/">
+                <span data-i18n="home.ctaEvents">Explore Events</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
               </a>
-              <a class="btn btn-outline" href="/about/" data-i18n="home.ctaAbout">About KCVA</a>
-            </div>
-            <div class="portal-stats" aria-label="KCVA at a glance" data-i18n-aria-label="home.statsLabel">
-              <div>
-                <p class="portal-stat-value">12</p>
-                <p class="portal-stat-label" data-i18n="home.statTeams">Teams</p>
-              </div>
-              <div>
-                <p class="portal-stat-value">02</p>
-                <p class="portal-stat-label" data-i18n="home.statDivisions">Divisions</p>
-              </div>
-              <div>
-                <p class="portal-stat-value">25–26</p>
-                <p class="portal-stat-label" data-i18n="home.statSeason">Season</p>
-              </div>
+              <a class="btn btn-outline-yellow" href="/sponsorship/">
+                <span data-i18n="home.ctaSponsorship">Sponsorship</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="home-section">
+      <section class="home-section home-stories">
         <div class="shell">
           <div class="section-head">
-            <div>
-              <p class="eyebrow" data-i18n="home.nextUp">Next up</p>
-              <h2 data-i18n="home.leagueLabel">The league</h2>
-            </div>
-            <a class="text-link" href="/events/">
-              <span data-i18n="home.allEvents">All events</span>
-              <span aria-hidden="true">→</span>
-            </a>
+            <h2 data-i18n="home.exploreTitle">Explore KCVA</h2>
           </div>
 
-          <div class="feature-grid">
-            <article class="event-card">
-              <a class="event-card-link" href="/events/volleywoods-25-26/">
-                <div class="event-card-media">
-                  <img
-                    src="/assets/session-hero-image-D0C4Hexz.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <span class="status-pill" data-status="completed" data-i18n="event.status.completed">
-                    COMPLETED
-                  </span>
-                </div>
-                <div class="event-card-body">
-                  <h3 data-i18n="home.latestTitle">KCVA Volleywoods | 25-26 Season</h3>
-                  <p class="event-card-subtitle" data-i18n="home.latestSubtitle">
-                    High School Volleyball Open Tournament
-                  </p>
-                  <div class="event-card-meta">
-                    <span data-i18n="home.latestDate">Nov 14, 2026</span>
-                    <span data-i18n="home.latestLocation">
-                      Volleywood (TOP Central Park), Shanghai
-                    </span>
-                  </div>
-                  <div class="event-card-footer">
-                    <span data-i18n="home.viewEvent">View event</span>
-                    <span class="event-card-arrow" aria-hidden="true">↗</span>
-                  </div>
-                </div>
-              </a>
+          <div class="story-stack">
+            <article class="story-block">
+              <div class="story-visual" aria-hidden="true">
+                <span class="story-index">01</span>
+                <span class="story-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-7h4v7M10 20V4h4v16M16 20v-5h4v5M3 20h18M9 4h6"></path></svg>
+                </span>
+              </div>
+              <div class="story-copy">
+                <h3 class="story-title" data-i18n="home.story1Title">Interscholastic Tournaments</h3>
+                <p class="story-text" data-i18n="home.story1Body">
+                  Professional volleyball and ultimate frisbee tournaments built for high school
+                  varsity squads.
+                </p>
+                <a class="story-link" href="/events/">
+                  <span data-i18n="home.story1Link">Explore Events</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                </a>
+              </div>
             </article>
 
-            <aside class="manifesto-card">
-              <div>
-                <p class="manifesto-kicker" data-i18n="home.valuesKicker">THE KCVA STANDARD</p>
-                <h2 class="manifesto-title" data-i18n="home.valuesTitle">More than a tournament.</h2>
-                <p class="manifesto-body" data-i18n="home.valuesBody">
-                  KCVA gives players a stage that feels like it belongs to them — competitive,
-                  welcoming, and built to last.
+            <article class="story-block">
+              <div class="story-visual" aria-hidden="true">
+                <span class="story-index">02</span>
+                <span class="story-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="2.5"></circle><circle cx="6" cy="17" r="2.5"></circle><circle cx="18" cy="17" r="2.5"></circle><path d="M10.8 8.2 7.2 15M13.2 8.2l3.6 6.8M8.5 17h7"></path></svg>
+                </span>
+              </div>
+              <div class="story-copy">
+                <h3 class="story-title" data-i18n="home.story2Title">Athlete &amp; Campus Community</h3>
+                <p class="story-text" data-i18n="home.story2Body">
+                  Fostering sportsmanship, varsity pride, and peer collaboration across schools.
                 </p>
+                <a class="story-link" href="/about-kcva/">
+                  <span data-i18n="home.story2Link">About KCVA</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                </a>
               </div>
-              <div class="manifesto-values">
-                <span data-i18n="home.value1">Player-driven</span>
-                <span data-i18n="home.value2">Community-first</span>
-                <span data-i18n="home.value3">Built to last</span>
+            </article>
+
+            <article class="story-block">
+              <div class="story-visual" aria-hidden="true">
+                <span class="story-index">03</span>
+                <span class="story-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path><path d="m12 12 1 2 2.2.2-1.7 1.5.5 2.2L12 16.8l-2 1.1.5-2.2-1.7-1.5L11 14l1-2Z"></path></svg>
+                </span>
               </div>
-            </aside>
+              <div class="story-copy">
+                <h3 class="story-title" data-i18n="home.story3Title">Official League Apparel &amp; Gear</h3>
+                <p class="story-text" data-i18n="home.story3Body">
+                  KCVA varsity gear, commemorative tournament jerseys, and athletic accessories.
+                </p>
+                <a class="story-link" href="https://shop.kcva.com.cn" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="home.story3Link">Visit Shop</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="story-block">
+              <div class="story-visual" aria-hidden="true">
+                <span class="story-index">04</span>
+                <span class="story-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l3 3h3l3-3h3"></path><path d="M8 12V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5M4 12v6h16v-6"></path><path d="M17 4v4M15 6h4"></path></svg>
+                </span>
+              </div>
+              <div class="story-copy">
+                <h3 class="story-title" data-i18n="home.story4Title">Strategic Brand Sponsorship</h3>
+                <p class="story-text" data-i18n="home.story4Body">
+                  Connecting premium brands with high-school youth culture and on-site tournament
+                  exposure.
+                </p>
+                <a class="story-link" href="/sponsorship/">
+                  <span data-i18n="home.story4Link">Sponsorship Opportunities</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>

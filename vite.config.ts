@@ -14,8 +14,7 @@ function discoverHtmlInputs(): Record<string, string> {
 
   addPage('main', 'index.html')
   addPage('events-index', 'events/index.html')
-  addPage('about', 'about/index.html')
-  addPage('media-hub', 'media-hub/index.html')
+  addPage('about-kcva', 'about-kcva/index.html')
   addPage('sponsorship', 'sponsorship/index.html')
   addPage('404', '404.html')
 
@@ -60,6 +59,13 @@ function copyEventStaticAssets(): Plugin {
             }
           })
         })
+
+      const leadershipSource = path.resolve(rootDir, 'about-kcva/leadership.json')
+      const leadershipTarget = path.resolve(rootDir, 'dist/about-kcva/leadership.json')
+      if (fs.existsSync(leadershipSource)) {
+        fs.mkdirSync(path.dirname(leadershipTarget), { recursive: true })
+        fs.copyFileSync(leadershipSource, leadershipTarget)
+      }
     },
   }
 }

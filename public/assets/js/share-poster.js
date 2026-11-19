@@ -153,7 +153,14 @@
     var deadlines = eventData.deadlines || {};
     var dateLabel = i18n.formatDateLabel(deadlines.eventDate || eventData.dateRangeLabel || '');
     var meta = dateLabel + (venue ? ' • ' + venue : '');
-    var isFrisbee = eventData.sport === 'frisbee';
+    var sport =
+      eventData.sport === 'frisbee'
+        ? 'frisbee'
+        : eventData.sport === 'basketball'
+          ? 'basketball'
+          : 'volleyball';
+    var isFrisbee = sport === 'frisbee';
+    var isBasketball = sport === 'basketball';
 
     return Promise.all([loadImage('/images/logo.png'), document.fonts ? document.fonts.ready : Promise.resolve()]).then(
       function (results) {
@@ -253,26 +260,41 @@
         ctx.fillRect(tableX, tableTop, tableWidth, headerHeight);
         ctx.restore();
 
-        var columns = isFrisbee
-          ? [
-              { key: 'position', label: i18n.t('event.posShort'), x: 116, align: 'center' },
-              { key: 'team', label: i18n.t('event.table.team'), x: 174, align: 'left' },
-              { key: 'played', label: i18n.t('event.table.played'), x: 486, align: 'center' },
-              { key: 'won', label: i18n.t('event.table.wins'), x: 558, align: 'center' },
-              { key: 'lost', label: i18n.t('event.table.losses'), x: 632, align: 'center' },
-              { key: 'setsOrDiff', label: i18n.t('event.table.diff'), x: 725, align: 'center' },
-              { key: 'sotg', label: i18n.t('event.table.sotg'), x: 835, align: 'center' },
-              { key: 'points', label: i18n.t('event.table.points'), x: 954, align: 'center' },
-            ]
-          : [
-              { key: 'position', label: i18n.t('event.posShort'), x: 134, align: 'center' },
-              { key: 'team', label: i18n.t('event.table.team'), x: 190, align: 'left' },
-              { key: 'played', label: i18n.t('event.table.played'), x: 552, align: 'center' },
-              { key: 'won', label: i18n.t('event.table.wins'), x: 632, align: 'center' },
-              { key: 'lost', label: i18n.t('event.table.losses'), x: 712, align: 'center' },
-              { key: 'setsOrDiff', label: i18n.t('event.table.sets'), x: 816, align: 'center' },
-              { key: 'points', label: i18n.t('event.table.points'), x: 954, align: 'center' },
-            ];
+        var columns;
+        if (isFrisbee) {
+          columns = [
+            { key: 'position', label: i18n.t('event.posShort'), x: 116, align: 'center' },
+            { key: 'team', label: i18n.t('event.table.team'), x: 174, align: 'left' },
+            { key: 'played', label: i18n.t('event.table.played'), x: 486, align: 'center' },
+            { key: 'won', label: i18n.t('event.table.wins'), x: 558, align: 'center' },
+            { key: 'lost', label: i18n.t('event.table.losses'), x: 632, align: 'center' },
+            { key: 'setsOrDiff', label: i18n.t('event.table.diff'), x: 725, align: 'center' },
+            { key: 'sotg', label: i18n.t('event.table.sotg'), x: 835, align: 'center' },
+            { key: 'points', label: i18n.t('event.table.points'), x: 954, align: 'center' },
+          ];
+        } else if (isBasketball) {
+          columns = [
+            { key: 'position', label: i18n.t('event.posShort'), x: 112, align: 'center' },
+            { key: 'team', label: i18n.t('event.table.team'), x: 168, align: 'left' },
+            { key: 'played', label: i18n.t('event.table.played'), x: 470, align: 'center' },
+            { key: 'won', label: i18n.t('event.table.wins'), x: 536, align: 'center' },
+            { key: 'lost', label: i18n.t('event.table.losses'), x: 602, align: 'center' },
+            { key: 'pf', label: i18n.t('event.table.pf'), x: 680, align: 'center' },
+            { key: 'pa', label: i18n.t('event.table.pa'), x: 750, align: 'center' },
+            { key: 'diff', label: i18n.t('event.table.diff'), x: 825, align: 'center' },
+            { key: 'points', label: i18n.t('event.table.points'), x: 954, align: 'center' },
+          ];
+        } else {
+          columns = [
+            { key: 'position', label: i18n.t('event.posShort'), x: 134, align: 'center' },
+            { key: 'team', label: i18n.t('event.table.team'), x: 190, align: 'left' },
+            { key: 'played', label: i18n.t('event.table.played'), x: 552, align: 'center' },
+            { key: 'won', label: i18n.t('event.table.wins'), x: 632, align: 'center' },
+            { key: 'lost', label: i18n.t('event.table.losses'), x: 712, align: 'center' },
+            { key: 'setsOrDiff', label: i18n.t('event.table.sets'), x: 816, align: 'center' },
+            { key: 'points', label: i18n.t('event.table.points'), x: 954, align: 'center' },
+          ];
+        }
 
         ctx.fillStyle = '#FFFFFF';
         ctx.font = '700 16px ' + SANS;
@@ -290,8 +312,16 @@
           var centerY = rowTop + rowHeight / 2 + 1;
           var color = row.position <= 3 ? '#E0BF22' : '#E5E5E5';
 
+          var rowData = {};
+          Object.keys(row).forEach(function (key) {
+            rowData[key] = row[key];
+          });
+          if (isBasketball && (rowData.diff == null || rowData.diff === '')) {
+            var difference = Number(rowData.pf || 0) - Number(rowData.pa || 0);
+            rowData.diff = difference > 0 ? '+' + difference : String(difference);
+          }
+
           ctx.fillStyle = color;
-          ctx.font = '600 21px ' + SANS;
           columns.forEach(function (column) {
             ctx.textAlign = column.align;
             ctx.font =
@@ -300,7 +330,7 @@
                 : column.key === 'position'
                   ? '700 22px ' + SANS
                   : '500 21px ' + SANS;
-            ctx.fillText(String(row[column.key] == null ? '-' : row[column.key]), column.x, centerY);
+            ctx.fillText(String(rowData[column.key] == null ? '-' : rowData[column.key]), column.x, centerY);
           });
 
           if (index < rows.length - 1) {
@@ -378,7 +408,7 @@
       '</h2></div><button class="poster-close" type="button" aria-label="' +
       escapeHtml(i18n.t('event.close')) +
       '">' +
-      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
       '</button></div>' +
       '<img class="poster-preview" alt="' +
       escapeHtml(i18n.t('event.posterAlt')) +

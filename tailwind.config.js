@@ -3,8 +3,7 @@ export default {
   content: [
     './index.html',
     './events/**/*.html',
-    './about/**/*.html',
-    './media-hub/**/*.html',
+    './about-kcva/**/*.html',
     './sponsorship/**/*.html',
     './src/**/*.{ts,js}',
     './public/assets/js/**/*.js',

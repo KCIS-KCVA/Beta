@@ -3,6 +3,7 @@
 /events /events/ 301
 /events/_template /events/_template/ 301
 /events/volleywoods-25-26 /events/volleywoods-25-26/ 301
-/media-hub /media-hub/ 301
 /sponsorship /sponsorship/ 301
-/about /about/ 301
+/about-kcva /about-kcva/ 301
+/about /about-kcva/ 301
+/about/* /about-kcva/:splat 301

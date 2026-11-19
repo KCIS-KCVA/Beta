@@ -130,7 +130,9 @@
   }
 
   function getSportKey() {
-    return eventData && eventData.sport === 'frisbee' ? 'frisbee' : 'volleyball';
+    if (eventData && eventData.sport === 'frisbee') return 'frisbee';
+    if (eventData && eventData.sport === 'basketball') return 'basketball';
+    return 'volleyball';
   }
 
   function getSportLabel() {
@@ -263,7 +265,7 @@
     );
   }
 
-  function renderHero() {
+  function renderHero(status) {
     var heroImage = './session-hero-image.png';
     return (
       '<section class="event-hero" aria-labelledby="event-title">' +
@@ -279,6 +281,11 @@
       '</h1>' +
       '<p class="event-hero-subtitle">' +
       escapeHtml(i18n.tText(eventData.subtitle)) +
+      '</p>' +
+      '<p class="status-label event-mobile-status" data-status="' +
+      status +
+      '" aria-live="polite">' +
+      escapeHtml(i18n.t('event.status.' + status)) +
       '</p>' +
       '</div></div></section>'
     );
@@ -442,6 +449,13 @@
 
     if (getSportKey() === 'frisbee') {
       headers.push('event.table.diff', 'event.table.sotg', 'event.table.points');
+    } else if (getSportKey() === 'basketball') {
+      headers.push(
+        'event.table.pf',
+        'event.table.pa',
+        'event.table.diff',
+        'event.table.points',
+      );
     } else {
       headers.push('event.table.sets', 'event.table.points');
     }
@@ -457,18 +471,23 @@
     var rows = division.rows || [];
     return rows
       .map(function (row) {
+        var sport = getSportKey();
         var topThree = Number(row.position) >= 1 && Number(row.position) <= 3;
-        var cells = [
-          row.position,
-          row.team,
-          row.played,
-          row.won,
-          row.lost,
-          row.setsOrDiff,
-        ];
+        var cells = [row.position, row.team, row.played, row.won, row.lost];
 
-        if (getSportKey() === 'frisbee') {
-          cells.push(row.sotg == null ? '-' : row.sotg);
+        if (sport === 'frisbee') {
+          cells.push(row.setsOrDiff, row.sotg == null ? '-' : row.sotg);
+        } else if (sport === 'basketball') {
+          var pf = Number(row.pf || 0);
+          var pa = Number(row.pa || 0);
+          var diff = row.diff;
+          if (diff == null || diff === '') {
+            var difference = pf - pa;
+            diff = difference > 0 ? '+' + difference : String(difference);
+          }
+          cells.push(row.pf == null ? '-' : row.pf, row.pa == null ? '-' : row.pa, diff);
+        } else {
+          cells.push(row.setsOrDiff);
         }
 
         cells.push(row.points);
@@ -634,7 +653,7 @@
       toast.className = 'toast';
       toast.setAttribute('role', 'status');
       toast.innerHTML =
-        '<span class="toast-check" aria-hidden="true">✓</span><span data-toast-text></span>';
+        '<span class="toast-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg></span><span data-toast-text></span>';
       document.body.appendChild(toast);
     }
 
@@ -711,7 +730,7 @@
   }
 
   function setDocumentTitle() {
-    document.title = i18n.tText(eventData.title) + ' - Events | KCVA';
+    document.title = i18n.tText(eventData.title) + ' | KCVA';
   }
 
   function render() {
@@ -719,7 +738,7 @@
     var status = resolveStatus();
 
     root.innerHTML =
-      renderHero() +
+      renderHero(status) +
       renderMainSplit(status) +
       renderSponsors() +
       renderLowerSections(status);
@@ -736,7 +755,7 @@
     var notFound = error && error.status === 404;
     var title = notFound ? i18n.t('event.notFoundTitle') : i18n.t('event.loadErrorTitle');
     var body = notFound ? i18n.t('event.notFoundBody') : i18n.t('event.loadErrorBody');
-    document.title = 'Events | KCVA';
+    document.title = i18n.t('title.events') + ' | KCVA';
     root.innerHTML =
       '<div class="event-error">' +
       '<p class="eyebrow">KCVA</p>' +

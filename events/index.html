@@ -4,67 +4,141 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta name="description" content="KCVA tournaments, showcases, and the moments that make a season.">
+    <meta name="description" content="KCVA high school varsity tournaments across volleyball, ultimate frisbee, and basketball.">
     <title>Events | KCVA</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/assets/css/main.css">
     <script defer src="/assets/js/i18n.js"></script>
     <script defer src="/assets/js/layout.js"></script>
+    <script defer src="/assets/js/events-data.js"></script>
+    <script defer src="/assets/js/events-list.js"></script>
   </head>
-  <body data-title-key="nav.events">
+  <body data-page-title-key="title.events">
     <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
     <div id="global-header"></div>
 
     <main id="main" tabindex="-1">
       <section class="page-hero">
         <div class="shell">
-          <p class="eyebrow" data-i18n="events.eyebrow">KCVA EVENTS</p>
-          <h1 data-i18n="events.title">On the court.</h1>
+          <p class="eyebrow" data-i18n="events.eyebrow">ON THE COURT</p>
+          <h1 data-i18n="events.title">Events</h1>
           <p data-i18n="events.body">
-            Tournaments, showcases, and the moments that make a season.
+            High school varsity tournaments across volleyball, ultimate frisbee, and basketball.
           </p>
         </div>
       </section>
 
-      <section class="events-index">
+      <section class="events-index" aria-labelledby="events-results-heading">
         <div class="shell">
-          <div class="index-head">
-            <h2 class="index-label" data-i18n="events.upcoming">Upcoming</h2>
-            <span class="index-count" data-i18n="events.count">01 event</span>
+          <h2 class="sr-only" id="events-results-heading" data-i18n="events.resultsLabel">Event results</h2>
+
+          <div class="events-toolbar">
+            <form class="events-search-form" id="events-search-form" role="search">
+              <label class="sr-only" for="events-search-input" data-i18n="events.searchLabel">Search events</label>
+              <div class="events-search-field">
+                <span class="events-search-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+                </span>
+                <input
+                  id="events-search-input"
+                  type="search"
+                  name="q"
+                  autocomplete="off"
+                  placeholder="Search events"
+                  data-i18n-placeholder="events.searchPlaceholder"
+                >
+                <button class="btn btn-solid events-search-submit" type="submit" aria-label="Search" data-i18n-aria-label="events.searchButton">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+                  <span data-i18n="events.searchButton">Search</span>
+                </button>
+              </div>
+            </form>
+
+            <div class="events-filter-bar">
+              <div class="filter-group" role="group" aria-labelledby="status-filter-label">
+                <span class="filter-label" id="status-filter-label" data-i18n="events.filter.status">Status</span>
+                <div class="filter-pills">
+                  <button class="filter-pill is-active" type="button" data-filter-status="all" aria-pressed="true">
+                    <span data-i18n="events.all">All</span>
+                  </button>
+                  <button class="filter-pill" type="button" data-filter-status="completed" aria-pressed="false">
+                    <span data-i18n="events.filter.completed">Completed</span>
+                  </button>
+                  <button class="filter-pill" type="button" data-filter-status="live" aria-pressed="false">
+                    <span data-i18n="events.filter.live">Live</span>
+                  </button>
+                  <button class="filter-pill" type="button" data-filter-status="scheduled" aria-pressed="false">
+                    <span data-i18n="events.filter.scheduled">Scheduled</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="filter-group" role="group" aria-labelledby="sport-filter-label">
+                <span class="filter-label" id="sport-filter-label" data-i18n="events.filter.sport">Sport</span>
+                <div class="filter-pills">
+                  <button class="filter-pill is-active" type="button" data-filter-sport="all" aria-pressed="true">
+                    <span data-i18n="events.all">All</span>
+                  </button>
+                  <button class="filter-pill" type="button" data-filter-sport="volleyball" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3c3 4 4 8 4 13M4.5 8c4 1 8 2 12 7M5 17c2-4 6-6 13-5"></path></svg>
+                    <span data-i18n="events.sport.volleyball">Volleyball</span>
+                  </button>
+                  <button class="filter-pill" type="button" data-filter-sport="frisbee" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="10" rx="9" ry="5"></ellipse><path d="M4 12.5c2.5 2.8 13.5 2.8 16 0M7 16.5c1.8 2.2 8.2 2.2 10 0"></path></svg>
+                    <span data-i18n="events.sport.frisbee">Frisbee</span>
+                  </button>
+                  <button class="filter-pill" type="button" data-filter-sport="basketball" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3v18M5.6 5.6c4 3 8.8 3 12.8 0M5.6 18.4c4-3 8.8-3 12.8 0"></path></svg>
+                    <span data-i18n="events.sport.basketball">Basketball</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="filter-group view-group" role="group" aria-labelledby="view-filter-label">
+                <span class="filter-label" id="view-filter-label" data-i18n="events.viewLabel">View</span>
+                <div class="view-toggle">
+                  <button class="view-button is-active" type="button" data-view="list" aria-pressed="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"></path><path d="M3 6h.01M3 12h.01M3 18h.01"></path></svg>
+                    <span data-i18n="events.view.list">List</span>
+                  </button>
+                  <button class="view-button" type="button" data-view="calendar" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg>
+                    <span data-i18n="events.view.calendar">Calendar</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="event-index-grid">
-            <article class="event-card">
-              <a class="event-card-link" href="/events/volleywoods-25-26/">
-                <div class="event-card-media">
-                  <img
-                    src="/events/volleywoods-25-26/session-hero-image.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <span class="status-pill" data-status="completed" data-i18n="event.status.completed">
-                    COMPLETED
-                  </span>
+          <p class="events-result-count" id="events-result-count" aria-live="polite" hidden></p>
+
+          <div class="events-results" id="events-results">
+            <div id="events-list-view">
+              <div class="events-list" id="events-list" aria-live="polite">
+                <div class="events-state">
+                  <span class="events-state-mark" aria-hidden="true"></span>
+                  <p data-i18n="common.loading">Loading</p>
                 </div>
-                <div class="event-card-body">
-                  <h3 data-i18n="home.latestTitle">KCVA Volleywoods | 25-26 Season</h3>
-                  <p class="event-card-subtitle" data-i18n="home.latestSubtitle">
-                    High School Volleyball Open Tournament
-                  </p>
-                  <div class="event-card-meta">
-                    <span data-i18n="home.latestDate">Nov 14, 2026</span>
-                    <span data-i18n="home.latestLocation">
-                      Volleywood (TOP Central Park), Shanghai
-                    </span>
-                  </div>
-                  <div class="event-card-footer">
-                    <span data-i18n="events.viewEvent">View event</span>
-                    <span class="event-card-arrow" aria-hidden="true">↗</span>
-                  </div>
+              </div>
+              <nav class="events-pagination" id="events-pagination" aria-label="Pagination" data-i18n-aria-label="events.pagination" hidden></nav>
+            </div>
+
+            <div id="events-calendar-view" hidden>
+              <div class="calendar-panel">
+                <div class="calendar-head">
+                  <button class="calendar-nav" id="calendar-prev" type="button" aria-label="Previous month" data-i18n-aria-label="events.calendarPrev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+                  </button>
+                  <h2 class="calendar-month" id="calendar-month-label"></h2>
+                  <button class="calendar-nav" id="calendar-next" type="button" aria-label="Next month" data-i18n-aria-label="events.calendarNext">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+                  </button>
                 </div>
-              </a>
-            </article>
+                <div class="calendar-weekdays" id="calendar-weekdays" aria-hidden="true"></div>
+                <div class="calendar-grid" id="calendar-grid" aria-label="Event calendar" data-i18n-aria-label="events.calendarLabel"></div>
+                <div id="calendar-agenda"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

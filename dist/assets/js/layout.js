@@ -9,10 +9,10 @@
   var LAST_FOCUSED = null;
 
   var closeIcon =
-    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
   var arrowIcon =
-    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
   function withLanguage(path) {
     try {
@@ -41,21 +41,23 @@
     var items = [
       { key: 'nav.home', path: '/' },
       { key: 'nav.events', path: '/events/' },
-      { key: 'nav.mediaHub', path: '/media-hub/' },
       { key: 'nav.sponsorship', path: '/sponsorship/' },
-      { key: 'nav.about', path: '/about/' },
+      { key: 'nav.shop', path: 'https://shop.kcva.com.cn', external: true },
+      { key: 'nav.about', path: '/about-kcva/' },
     ];
 
     return items
       .map(function (item, index) {
-        var active = isCurrent(item.path === '/' ? '/' : item.path.replace(/\/$/, ''));
+        var active =
+          !item.external && isCurrent(item.path === '/' ? '/' : item.path.replace(/\/$/, ''));
         return (
           '<a class="' +
           className +
           (active ? ' is-active' : '') +
           '" href="' +
-          withLanguage(item.path) +
+          (item.external ? item.path : withLanguage(item.path)) +
           '"' +
+          (item.external ? ' target="_blank" rel="noopener noreferrer"' : '') +
           (active ? ' aria-current="page"' : '') +
           '>' +
           (className === 'drawer-link'
@@ -73,22 +75,15 @@
 
   function languageToggleMarkup(extraClass) {
     var lang = i18n.getLanguage();
+    var targetLabel = i18n.t(lang === 'en' ? 'language.zh' : 'language.en');
     return (
       '<button class="lang-toggle ' +
       (extraClass || '') +
       '" type="button" aria-label="' +
       i18n.t('language.switch') +
       '">' +
-      '<span class="' +
-      (lang === 'en' ? 'lang-active' : '') +
-      '">' +
-      i18n.t('language.en') +
-      '</span>' +
-      '<span class="lang-sep" aria-hidden="true">|</span>' +
-      '<span class="' +
-      (lang === 'zh' ? 'lang-active' : '') +
-      '">' +
-      i18n.t('language.zh') +
+      '<span class="lang-current">' +
+      targetLabel +
       '</span>' +
       '</button>'
     );
@@ -117,7 +112,7 @@
       '<button class="nav-toggle" type="button" aria-label="' +
       t('nav.openMenu') +
       '" aria-expanded="false" aria-controls="mobile-navigation">' +
-      '<span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>' +
+      '<svg class="nav-toggle-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>' +
       '</button>' +
       '</div>' +
       '</header>' +
@@ -163,6 +158,7 @@
       '<div class="shell">' +
       '<img class="footer-logo h-10 w-auto" src="/images/logo.png" alt="KCVA" width="700" height="223">' +
       '<div class="footer-main">' +
+      '<div class="footer-left">' +
       '<div class="footer-col">' +
       '<h2 class="footer-heading">' +
       t('footer.stayConnected') +
@@ -193,31 +189,27 @@
       t('footer.events') +
       '</a></li>' +
       '<li><a href="' +
-      withLanguage('/media-hub/') +
-      '">' +
-      t('footer.mediaHub') +
-      '</a></li>' +
-      '<li><a href="' +
       withLanguage('/sponsorship/') +
       '">' +
       t('footer.sponsorship') +
       '</a></li>' +
+      '<li><a href="https://shop.kcva.com.cn" target="_blank" rel="noopener noreferrer">' +
+      t('footer.shop') +
+      '</a></li>' +
       '<li><a href="' +
-      withLanguage('/about/') +
+      withLanguage('/about-kcva/') +
       '">' +
       t('footer.about') +
       '</a></li>' +
       '</ul>' +
       '</div>' +
+      '</div>' +
       '<div class="footer-right">' +
       '<p class="footer-org">' +
       t('footer.org') +
       '</p>' +
-      '<p class="footer-slogan">“' +
+      '<p class="footer-slogan">' +
       t('footer.slogan') +
-      '”</p>' +
-      '<p class="footer-address">' +
-      t('footer.address') +
       '</p>' +
       '</div>' +
       '</div>' +

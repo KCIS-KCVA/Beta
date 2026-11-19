@@ -171,9 +171,9 @@
   }
 
   function applyPageTitle() {
-    var key = document.body && document.body.getAttribute('data-title-key');
+    var key = document.body && document.body.getAttribute('data-page-title-key');
     if (!key) return;
-    document.title = key === 'nav.events' ? t(key) + ' | KCVA' : t(key) + ' - Events | KCVA';
+    document.title = t(key) + ' | KCVA';
   }
 
   function applyTranslations(root) {
@@ -195,6 +195,12 @@
       var key = element.getAttribute('data-i18n-title');
       if (!key) return;
       element.setAttribute('title', t(key));
+    });
+
+    scope.querySelectorAll('[data-i18n-placeholder]').forEach(function (element) {
+      var key = element.getAttribute('data-i18n-placeholder');
+      if (!key) return;
+      element.setAttribute('placeholder', t(key));
     });
   }
 

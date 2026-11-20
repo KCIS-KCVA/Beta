@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="KCVA event details, schedules, results, organizers, and partners.">
+    <title>Events | KCVA</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script defer src="/assets/js/i18n.js"></script>
+    <script defer src="/assets/js/layout.js"></script>
+    <script defer src="/assets/js/share-poster.js"></script>
+    <script defer src="/assets/js/event.js"></script>
+  </head>
+  <body class="event-page" data-page-title-key="title.events">
+    <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+    <div id="global-header"></div>
+
+    <main id="main" tabindex="-1">
+      <div id="event-root" aria-busy="true">
+        <div class="event-loading" role="status">
+          <div class="loading-mark" aria-hidden="true"></div>
+          <p data-i18n="common.loading">Loading event</p>
+        </div>
+      </div>
+      <noscript>
+        <div class="event-error">
+          <p class="eyebrow">KCVA</p>
+          <h1>JavaScript is required</h1>
+          <p>This event reads its schedule and results from event-data.json. Please enable JavaScript to view it.</p>
+        </div>
+      </noscript>
+    </main>
+
+    <div id="global-footer"></div>
+  </body>
+</html>

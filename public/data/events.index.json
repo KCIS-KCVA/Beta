@@ -6,7 +6,10 @@
       "slug": "volleywoods-25-26",
       "season": "25-26",
       "sport": "volleyball",
-      "sportLabel": { "en": "VOLLEYBALL", "zh": "排球" },
+      "sportLabel": {
+        "en": "VOLLEYBALL",
+        "zh": "排球"
+      },
       "title": {
         "en": "KCVA Volleywoods | 25-26 Season",
         "zh": "KCVA 沃利伍兹公开赛 | 25-26 赛季"
@@ -24,6 +27,33 @@
       },
       "heroImage": "/events/volleywoods-25-26/session-hero-image.png",
       "url": "/events/volleywoods-25-26/",
+      "statusOverride": null
+    },
+    {
+      "slug": "wlsa-25-26",
+      "season": "25-26",
+      "sport": "volleyball",
+      "sportLabel": {
+        "en": "VOLLEYBALL",
+        "zh": "排球"
+      },
+      "title": {
+        "en": "KCVA WLSA | 25-26 Season",
+        "zh": "KCVA WLSA | 25-26 赛季"
+      },
+      "subtitle": {
+        "en": "High School Volleyball Open Tournament",
+        "zh": "高中排球公开锦标赛"
+      },
+      "date": "2026-06-13",
+      "dateLabel": "2026/06/13",
+      "resultsReleaseDate": "2026-06-14T00:00:00+08:00",
+      "venue": {
+        "en": "WLSA Shanghai School, Baoshan, Shanghai",
+        "zh": "WLSA 上海学校，中国上海市宝山区"
+      },
+      "heroImage": "/events/wlsa-25-26/session-hero-image.png",
+      "url": "/events/wlsa-25-26/",
       "statusOverride": null
     }
   ]

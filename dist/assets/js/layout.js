@@ -214,7 +214,12 @@
       '</div>' +
       '</div>' +
       '<div class="footer-bottom">' +
+      '<p class="footer-copyright">' +
       t('footer.copyright') +
+      '</p>' +
+      '<a class="footer-media-hint" href="https://ksvg.com.cn" target="_blank" rel="noopener noreferrer" data-i18n="footer.mediaTechHint">' +
+      t('footer.mediaTechHint') +
+      '</a>' +
       '</div>' +
       '</div>' +
       '</footer>'

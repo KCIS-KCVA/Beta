@@ -52,7 +52,7 @@ function copyEventStaticAssets(): Plugin {
           const targetDir = path.join(distEvents, entry.name)
           fs.mkdirSync(targetDir, { recursive: true })
 
-          ;['event-data.json', 'session-hero-image.png', 'sponsors.png'].forEach((file) => {
+          ;['event-data.json', 'session-hero-image.png'].forEach((file) => {
             const source = path.join(sourceDir, file)
             if (fs.existsSync(source)) {
               fs.copyFileSync(source, path.join(targetDir, file))

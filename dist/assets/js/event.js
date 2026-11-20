@@ -269,6 +269,11 @@
     var heroImage = './session-hero-image.png';
     return (
       '<section class="event-hero" aria-labelledby="event-title">' +
+      '<div class="event-hero-top"><div class="shell"><a class="event-back" href="/events/">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>' +
+      '<span>' +
+      escapeHtml(i18n.t('event.backToEvents')) +
+      '</span></a></div></div>' +
       '<div class="event-hero-media"><img src="' +
       escapeAttr(heroImage) +
       '" alt="" fetchpriority="high"></div>' +
@@ -428,13 +433,10 @@
   }
 
   function renderSponsors() {
-    var sponsorImage = './sponsors.png';
     return (
       '<section class="sponsor-strip" aria-label="' +
       escapeAttr(i18n.t('event.partners')) +
-      '"><div class="sponsor-inner"><img class="sponsor-banner" src="' +
-      escapeAttr(sponsorImage) +
-      '" alt="Sponsors" width="1264" height="100" loading="lazy" decoding="async" onerror="this.parentElement.style.display=\'none\'"></div></section>'
+      '"><div class="sponsor-inner"><img class="sponsor-banner" src="/images/sponsos-banner.png" alt="KCVA sponsors" width="2400" height="160" loading="lazy" decoding="async" onerror="this.parentElement.style.display=\'none\'"></div></section>'
     );
   }
 
@@ -612,6 +614,24 @@
   }
 
   function renderLowerSections(status) {
+    var volunteers = eventData.volunteers || [];
+    var volunteerSection = '';
+
+    if (volunteers.length > 0) {
+      volunteerSection =
+        '<section class="people-section">' +
+        '<h2 class="people-title">' +
+        escapeHtml(i18n.t('event.supportTitle')) +
+        '</h2>' +
+        '<p class="people-subtitle">' +
+        escapeHtml(i18n.t('event.supportSubtitle')) +
+        '</p>' +
+        '<div class="people-card">' +
+        renderVolunteers() +
+        '</div>' +
+        '</section>';
+    }
+
     return (
       '<div class="shell event-lower">' +
       '<section class="results-section" aria-label="' +
@@ -630,17 +650,7 @@
       renderOrganizers() +
       '</div></div>' +
       '</section>' +
-      '<section class="people-section">' +
-      '<h2 class="people-title">' +
-      escapeHtml(i18n.t('event.supportTitle')) +
-      '</h2>' +
-      '<p class="people-subtitle">' +
-      escapeHtml(i18n.t('event.supportSubtitle')) +
-      '</p>' +
-      '<div class="people-card">' +
-      renderVolunteers() +
-      '</div>' +
-      '</section>' +
+      volunteerSection +
       '</div>'
     );
   }

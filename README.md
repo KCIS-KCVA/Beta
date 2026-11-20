@@ -40,13 +40,11 @@ repo-root/
 │   ├── _template/
 │   │   ├── index.html
 │   │   ├── event-data.json
-│   │   ├── session-hero-image.png
-│   │   └── sponsors.png
+│   │   └── session-hero-image.png
 │   └── volleywoods-25-26/
 │       ├── index.html
 │       ├── event-data.json
-│       ├── session-hero-image.png
-│       └── sponsors.png
+│       └── session-hero-image.png
 ├── about-kcva/
 │   ├── index.html
 │   └── leadership.json
@@ -66,7 +64,9 @@ Files in `public/` are served from root, not from `/public/...`:
 - Shared scripts: `/assets/js/...`
 - Locales: `/locales/...`
 - Events index: `/data/events.index.json`
-- Event assets are sibling-relative: `./event-data.json`, `./session-hero-image.png`, `./sponsors.png`.
+- Event data and hero art are sibling-relative: `./event-data.json`, `./session-hero-image.png`.
+- Shared event sponsor banner: `/images/sponsos-banner.png`.
+- Sponsor logos live in `/images/` and are used by the Sponsorship page.
 
 Every HTML page links `/assets/css/main.css`. That file is generated from `src/style.css` by the Tailwind CLI:
 
@@ -89,7 +89,7 @@ The compiled CSS is committed so plain static preview servers (including the por
 - `404.html`
 - Every `events/*/index.html`
 
-A build plugin copies `event-data.json`, `session-hero-image.png`, and `sponsors.png` from each event folder into the matching `dist/events/<slug>/` directory. It also copies `about-kcva/leadership.json` into `dist/about-kcva/`.
+A build plugin copies `event-data.json` and `session-hero-image.png` from each event folder into the matching `dist/events/<slug>/` directory. It also copies `about-kcva/leadership.json` into `dist/about-kcva/`.
 
 ## Master events index
 
@@ -119,7 +119,7 @@ The homepage uses `public/data/events.index.json` for its hero image, and `/even
 
 1. Duplicate `events/_template/`.
 2. Rename the copy to the new session slug.
-3. Replace `session-hero-image.png` and `sponsors.png`.
+3. Replace `session-hero-image.png`.
 4. Edit `event-data.json`.
 5. Add the event summary to `public/data/events.index.json`.
 6. Commit. Cloudflare Pages rebuilds and deploys automatically.

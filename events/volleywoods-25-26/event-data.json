@@ -62,31 +62,6 @@
     { "name": "O.K.", "role": { "en": "Event Operations Volunteer, KCVA", "zh": "赛事运营志愿者, KCVA" } }
   ],
   "standings": {
-    "divisions": [
-      {
-        "id": "boys",
-        "title": { "en": "BOYS", "zh": "男子组" },
-        "rows": [
-          { "position": 1, "team": "KCISEC Boys", "played": 5, "won": 5, "lost": 0, "setsOrDiff": "15-2", "points": 15 },
-          { "position": 2, "team": "OCAC Boys", "played": 5, "won": 4, "lost": 1, "setsOrDiff": "13-5", "points": 12 },
-          { "position": 3, "team": "DWIGHT Boys", "played": 5, "won": 3, "lost": 2, "setsOrDiff": "10-8", "points": 9 },
-          { "position": 4, "team": "SAS Puxi Boys", "played": 5, "won": 2, "lost": 3, "setsOrDiff": "8-11", "points": 6 },
-          { "position": 5, "team": "BISS Puxi Boys", "played": 5, "won": 1, "lost": 4, "setsOrDiff": "5-13", "points": 3 },
-          { "position": 6, "team": "Concordia Boys", "played": 5, "won": 0, "lost": 5, "setsOrDiff": "2-15", "points": 0 }
-        ]
-      },
-      {
-        "id": "girls",
-        "title": { "en": "GIRLS", "zh": "女子组" },
-        "rows": [
-          { "position": 1, "team": "KCISEC Girls", "played": 5, "won": 5, "lost": 0, "setsOrDiff": "15-3", "points": 15 },
-          { "position": 2, "team": "OCAC Girls", "played": 5, "won": 4, "lost": 1, "setsOrDiff": "13-6", "points": 12 },
-          { "position": 3, "team": "DWIGHT Girls", "played": 5, "won": 3, "lost": 2, "setsOrDiff": "11-9", "points": 9 },
-          { "position": 4, "team": "SAS Puxi Girls", "played": 5, "won": 2, "lost": 3, "setsOrDiff": "7-11", "points": 6 },
-          { "position": 5, "team": "BISS Puxi Girls", "played": 5, "won": 1, "lost": 4, "setsOrDiff": "5-12", "points": 3 },
-          { "position": 6, "team": "Concordia Girls", "played": 5, "won": 0, "lost": 5, "setsOrDiff": "1-15", "points": 0 }
-        ]
-      }
-    ]
+    "divisions": []
   }
 }

@@ -1,0 +1,128 @@
+{
+  "sport": "volleyball",
+  "sportLabel": {
+    "en": "VOLLEYBALL",
+    "zh": "排球"
+  },
+  "title": {
+    "en": "KCVA WLSA | 25-26 Season",
+    "zh": "KCVA WLSA | 25-26 赛季"
+  },
+  "subtitle": {
+    "en": "High School Volleyball Open Tournament",
+    "zh": "高中排球公开锦标赛"
+  },
+  "dates": [
+    {
+      "month": "Jun",
+      "day": "13"
+    }
+  ],
+  "dateRangeLabel": "2026/06/13",
+  "deadlines": {
+    "registrationDeadline": "2026-05-12T23:59:59+08:00",
+    "ticketDeadline": "2026-06-11T23:59:59+08:00",
+    "eventDate": "2026-06-13T08:00:00+08:00",
+    "resultsReleaseDate": "2026-06-14T00:00:00+08:00"
+  },
+  "venue": {
+    "name": {
+      "en": "WLSA Shanghai School",
+      "zh": "WLSA 上海学校"
+    },
+    "address": {
+      "en": "WLSA Shanghai School, Baoshan, Shanghai, People's Republic of China",
+      "zh": "中国上海市宝山区 WLSA 上海学校"
+    }
+  },
+  "description": {
+    "en": [
+      "The KCVA Volleyball Tournament is a premier youth sports event co-hosted by KCVA and WLSA Shanghai Academy. This tournament aims to showcase the competitive spirit, teamwork, and athletic passion of youth students.",
+      "Hosted at WLSA Shanghai School in Baoshan, the tournament brings together high school volleyball squads for a full day of competitive match play.",
+      "Built around school teams, the event emphasizes sportsmanship, varsity pride, and a professional tournament environment for student-athletes, coaches, and campus communities.",
+      "Player and volunteer registration closes May 12, 2026, with ticket sales ending June 11, 2026. Tournament results will be published on June 14, 2026."
+    ],
+    "zh": [
+      "KCVA 排球锦标赛是由 KCVA 与 WLSA 上海学校联合主办的高水平青少年体育赛事。本次赛事旨在展现青年学生的竞技精神、团队合作与运动热情。",
+      "赛事将在位于上海宝山的 WLSA 上海学校举行，汇聚多支高中排球校队，展开一整天的激烈角逐。",
+      "赛事以校队为核心，强调体育精神、母校荣誉与专业赛事体验，为学生运动员、教练与校园社群提供高水平的竞技舞台。",
+      "球员与志愿者报名将于 2026 年 5 月 12 日截止，售票将于 2026 年 6 月 11 日结束。赛事结果将于 2026 年 6 月 14 日公布。"
+    ]
+  },
+  "actions": {
+    "playerRegistrationUrl": "",
+    "volunteerRegistrationUrl": "",
+    "buyTicketsUrl": "",
+    "gameReplayUrl": "",
+    "livePhotoGalleryUrl": "https://v.pixcheese.com/s/WbncqDAm5kw"
+  },
+  "organizers": [
+    {
+      "name": "Benze Wang",
+      "role": {
+        "en": "Tournament Director",
+        "zh": "赛事总监"
+      }
+    },
+    {
+      "name": "Abby Wang",
+      "role": {
+        "en": "Master of Ceremonies",
+        "zh": "主持人"
+      }
+    },
+    {
+      "name": "Tony Jian",
+      "role": {
+        "en": "Media & Technology Lead",
+        "zh": "媒体技术主管"
+      }
+    },
+    {
+      "name": "Katherine Yang",
+      "role": {
+        "en": "Business Liaison",
+        "zh": "商务统筹"
+      }
+    },
+    {
+      "name": "Ivory Cheng",
+      "role": {
+        "en": "Business Liaison",
+        "zh": "商务统筹"
+      }
+    },
+    {
+      "name": "Chris Ding",
+      "role": {
+        "en": "On-site Operations Lead",
+        "zh": "现场运营主管"
+      }
+    },
+    {
+      "name": "Susanna You",
+      "role": {
+        "en": "On-site Operations",
+        "zh": "现场执行"
+      }
+    },
+    {
+      "name": "Alissa Ling",
+      "role": {
+        "en": "On-site Operations",
+        "zh": "现场执行"
+      }
+    },
+    {
+      "name": "Justin Pan",
+      "role": {
+        "en": "On-site Operations",
+        "zh": "现场执行"
+      }
+    }
+  ],
+  "volunteers": [],
+  "standings": {
+    "divisions": []
+  }
+}

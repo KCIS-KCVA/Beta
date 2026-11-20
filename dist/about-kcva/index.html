@@ -54,6 +54,20 @@
       </section>
     </main>
 
+    <div class="leader-modal" id="leader-profile" hidden>
+      <div class="leader-modal-backdrop" data-leader-close aria-hidden="true"></div>
+      <div class="leader-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="leader-profile-name" tabindex="-1">
+        <button class="leader-modal-close" type="button" data-leader-close aria-label="Close profile" data-i18n-aria-label="about.closeProfile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <p class="leader-modal-tier"></p>
+        <h2 class="leader-modal-name" id="leader-profile-name"></h2>
+        <p class="leader-modal-role"></p>
+        <p class="leader-modal-external" hidden></p>
+        <p class="leader-modal-bio"></p>
+      </div>
+    </div>
+
     <div id="global-footer"></div>
   </body>
 </html>

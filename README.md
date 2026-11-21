@@ -55,6 +55,15 @@ repo-root/
 └── package.json
 ```
 
+## Image quality standard
+
+Homepage imagery is served from local assets with a fixed quality target rather than relying on source-image quality:
+
+- Master JPEGs are capped at 1400px on the long edge.
+- Responsive WebP variants are generated at 800px and 1400px where the master allows (quality 80–82); lower-resolution masters stay at native width, with the JPEG retained as a fallback.
+- Markup uses `<picture>`, `srcset`, `sizes`, explicit dimensions, and `object-fit: cover`.
+- Leadership portraits use a consistent 600 × 750 crop at JPEG quality 82.
+
 ## Vite asset rules
 
 Files in `public/` are served from root, not from `/public/...`:
@@ -65,8 +74,8 @@ Files in `public/` are served from root, not from `/public/...`:
 - Locales: `/locales/...`
 - Events index: `/data/events.index.json`
 - Event data and hero art are sibling-relative: `./event-data.json`, `./session-hero-image.png`.
-- Shared event sponsor banner: `/images/sponsos-banner.png`.
-- Sponsor logos live in `/images/` and are used by the Sponsorship page.
+- Event sponsor rail: fetched from `/data/sponsors.json` and rendered from the existing logos in `/images/`.
+- The same sponsor logos are used by the Sponsorship page.
 
 Every HTML page links `/assets/css/main.css`. That file is generated from `src/style.css` by the Tailwind CLI:
 

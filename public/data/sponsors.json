@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Aprisa",
+    "logo": "/images/Aprisa.png",
+    "theme": "light"
+  },
+  {
+    "name": "JUFAN Corporation",
+    "logo": "/images/JUFAN-CORPORATION.png",
+    "theme": "light"
+  },
+  {
+    "name": "Handsome",
+    "logo": "/images/Handsome.png",
+    "theme": "dark"
+  },
+  {
+    "name": "BOYA Plush",
+    "logo": "/images/Boya-Plush.png",
+    "theme": "light"
+  },
+  {
+    "name": "ELECTROX",
+    "logo": "/images/ElectroX.png",
+    "theme": "dark"
+  },
+  {
+    "name": "KSVG",
+    "logo": "/images/KSVG.png",
+    "theme": "light"
+  },
+  {
+    "name": "Volleywoods",
+    "logo": "/images/Volleywoods.png",
+    "theme": "dark"
+  },
+  {
+    "name": "WLSA Shanghai Academy",
+    "logo": "/images/WLSA-Shanghai-Academy.png",
+    "theme": "light"
+  }
+]

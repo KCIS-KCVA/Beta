@@ -71,5 +71,17 @@
           });
       });
     });
+
+    document.querySelectorAll('.activation-trigger').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var expanded = button.getAttribute('aria-expanded') === 'true';
+        var panel = document.getElementById(button.getAttribute('aria-controls'));
+        var toggle = button.querySelector('.activation-toggle');
+
+        button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        if (panel) panel.hidden = expanded;
+        if (toggle) toggle.textContent = expanded ? '+' : '−';
+      });
+    });
   });
 })();

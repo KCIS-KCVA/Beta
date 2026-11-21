@@ -12,9 +12,9 @@
   var lastTrigger = null;
 
   var TIERS = [
-    { key: 'executive', titleKey: 'about.tierExecutive', index: '01' },
-    { key: 'business', titleKey: 'about.tierBusiness', index: '02' },
-    { key: 'operations', titleKey: 'about.tierOperations', index: '03' },
+    { key: 'executive', titleKey: 'about.tierExecutive' },
+    { key: 'business', titleKey: 'about.tierBusiness' },
+    { key: 'operations', titleKey: 'about.tierOperations' },
   ];
 
   function escapeHtml(value) {
@@ -35,35 +35,57 @@
     })[0] || TIERS[2];
   }
 
+  function roleLines(leader) {
+    var lines = String(i18n.tText(leader.role) || '')
+      .split(/\r?\n/)
+      .map(function (line) {
+        return line.trim();
+      })
+      .filter(Boolean);
+    if (leader.externalRole) {
+      lines.push(i18n.tText(leader.externalRole));
+    }
+    return lines;
+  }
+
+  function roleMarkup(leader) {
+    return roleLines(leader)
+      .map(function (line) {
+        return '<span class="leader-role-line">' + escapeHtml(line) + '</span>';
+      })
+      .join('');
+  }
+
   function arrowIcon() {
     return (
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>'
     );
   }
 
-  function leaderMarkup(leader, index, featured) {
-    var externalRole = leader.externalRole ? i18n.tText(leader.externalRole) : '';
+  function leaderMarkup(leader, index) {
+    var image = leader.image || '';
     return (
-      '<button class="leader-card' +
-      (featured ? ' leader-card--featured' : '') +
-      '" type="button" data-leader-index="' +
+      '<button class="leader-card" type="button" data-leader-index="' +
       index +
       '" aria-haspopup="dialog" aria-controls="leader-profile">' +
-      '<span class="leader-card-top"><span class="leader-index">' +
-      String(index + 1).padStart(2, '0') +
-      '</span></span>' +
+      (image
+        ? '<span class="leader-photo-wrap"><img class="leader-photo" src="' +
+          escapeHtml(image) +
+          '" alt="' +
+          escapeHtml(leader.name) +
+          '" loading="lazy" decoding="async"></span>'
+        : '') +
+      '<span class="leader-card-body">' +
       '<span class="leader-name">' +
       escapeHtml(leader.name) +
       '</span>' +
       '<span class="leader-role">' +
-      escapeHtml(i18n.tText(leader.role)) +
+      roleMarkup(leader) +
       '</span>' +
-      (externalRole
-        ? '<span class="leader-external">' + escapeHtml(externalRole) + '</span>'
-        : '') +
       '<span class="leader-open">' +
       escapeHtml(i18n.t('about.viewProfile')) +
       arrowIcon() +
+      '</span>' +
       '</span>' +
       '</button>'
     );
@@ -83,31 +105,17 @@
 
       if (!tierLeaders.length) return '';
 
-      var featured = '';
-      var cards = tierLeaders;
-
-      if (tier.key === 'executive' && tierLeaders.length > 1) {
-        featured =
-          '<div class="leader-featured">' +
-          leaderMarkup(tierLeaders[0].leader, tierLeaders[0].index, true) +
-          '</div>';
-        cards = tierLeaders.slice(1);
-      }
-
       return (
         '<section class="leader-tier leader-tier--' +
         tier.key +
         '">' +
-        '<div class="leader-tier-head"><span class="leader-tier-index" aria-hidden="true">' +
-        tier.index +
-        '</span><h3>' +
+        '<div class="leader-tier-head"><h3>' +
         escapeHtml(i18n.t(tier.titleKey)) +
         '</h3></div>' +
-        featured +
         '<div class="leader-tier-cards">' +
-        cards
+        tierLeaders
           .map(function (item) {
-            return leaderMarkup(item.leader, item.index, false);
+            return leaderMarkup(item.leader, item.index);
           })
           .join('') +
         '</div></section>'
@@ -139,16 +147,18 @@
     if (!modal || !leaders || !leaders[index]) return;
     var leader = leaders[index];
     var tier = tierFor(leader.category);
-    var externalRole = leader.externalRole ? i18n.tText(leader.externalRole) : '';
+    var photo = modal.querySelector('.leader-modal-photo');
 
     modal.querySelector('.leader-modal-tier').textContent = i18n.t(tier.titleKey);
     modal.querySelector('.leader-modal-name').textContent = leader.name;
-    modal.querySelector('.leader-modal-role').textContent = i18n.tText(leader.role);
+    modal.querySelector('.leader-modal-role').innerHTML = roleMarkup(leader);
     modal.querySelector('.leader-modal-bio').textContent = i18n.tText(leader.bio);
 
-    var external = modal.querySelector('.leader-modal-external');
-    external.textContent = externalRole;
-    external.hidden = !externalRole;
+    if (photo) {
+      photo.src = leader.image || '';
+      photo.alt = leader.name;
+      photo.hidden = !leader.image;
+    }
 
     lastTrigger = trigger || null;
     modal.hidden = false;

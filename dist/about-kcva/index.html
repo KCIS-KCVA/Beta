@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <script defer src="/assets/js/i18n.js"></script>
     <script defer src="/assets/js/layout.js"></script>
+    <script defer src="/assets/js/cookies.js"></script>
     <script defer src="/assets/js/about.js"></script>
   </head>
   <body data-page-title-key="title.about">
@@ -38,6 +39,9 @@
               <p data-i18n="about.paragraph2">
                 Beyond the scoreboard, KCVA serves as an empowering platform for young student-athletes, organizers, and campus communities. By combining tournament standards, high-energy live atmospheres, and creative collaboration, we cultivate leadership, teamwork, and an enduring passion for sports that extends far beyond the court.
               </p>
+              <p data-i18n="about.paragraph3">
+                KCVA is more than a sports community. It is also a platform for international high school students across the Yangtze River Delta to connect, learn, and gain hands-on experience in business, event operations, sports culture, and photography.
+              </p>
             </div>
           </section>
 
@@ -60,11 +64,15 @@
         <button class="leader-modal-close" type="button" data-leader-close aria-label="Close profile" data-i18n-aria-label="about.closeProfile">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
         </button>
-        <p class="leader-modal-tier"></p>
-        <h2 class="leader-modal-name" id="leader-profile-name"></h2>
-        <p class="leader-modal-role"></p>
-        <p class="leader-modal-external" hidden></p>
-        <p class="leader-modal-bio"></p>
+        <div class="leader-modal-profile">
+          <img class="leader-modal-photo" src="" alt="" loading="lazy" decoding="async">
+          <div class="leader-modal-copy">
+            <h2 class="leader-modal-name" id="leader-profile-name"></h2>
+            <p class="leader-modal-tier"></p>
+            <p class="leader-modal-role"></p>
+            <p class="leader-modal-bio"></p>
+          </div>
+        </div>
       </div>
     </div>
 

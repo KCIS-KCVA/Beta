@@ -161,25 +161,6 @@
       '<div class="footer-left">' +
       '<div class="footer-col">' +
       '<h2 class="footer-heading">' +
-      t('footer.stayConnected') +
-      '</h2>' +
-      '<ul class="footer-links">' +
-      '<li><a href="mailto:hello@kcva.com.cn">' +
-      t('footer.email') +
-      '</a></li>' +
-      '<li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">' +
-      t('footer.instagram') +
-      '</a></li>' +
-      '<li><a href="https://www.youtube.com/" target="_blank" rel="noreferrer">' +
-      t('footer.youtube') +
-      '</a></li>' +
-      '<li><a href="https://www.douyin.com/" target="_blank" rel="noreferrer">' +
-      t('footer.douyin') +
-      '</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '<div class="footer-col">' +
-      '<h2 class="footer-heading">' +
       t('footer.coreServices') +
       '</h2>' +
       '<ul class="footer-links">' +
@@ -203,6 +184,19 @@
       '</a></li>' +
       '</ul>' +
       '</div>' +
+      '<div class="footer-col">' +
+      '<h2 class="footer-heading">' +
+      t('footer.stayConnected') +
+      '</h2>' +
+      '<ul class="footer-links">' +
+      '<li><a href="mailto:support@kcva.com.cn">' +
+      t('footer.email') +
+      '</a></li>' +
+      '<li><a href="https://v.douyin.com/Ssv-Mpl54Nw/" target="_blank" rel="noopener noreferrer">' +
+      t('footer.douyin') +
+      '</a></li>' +
+      '</ul>' +
+      '</div>' +
       '</div>' +
       '<div class="footer-right">' +
       '<p class="footer-org">' +
@@ -214,12 +208,23 @@
       '</div>' +
       '</div>' +
       '<div class="footer-bottom">' +
+      '<div class="footer-bottom-copy">' +
       '<p class="footer-copyright">' +
       t('footer.copyright') +
       '</p>' +
-      '<a class="footer-media-hint" href="https://ksvg.com.cn" target="_blank" rel="noopener noreferrer" data-i18n="footer.mediaTechHint">' +
-      t('footer.mediaTechHint') +
-      '</a>' +
+      '<p class="footer-media-hint">' +
+      '<span data-i18n="footer.mediaTechPrefix">' +
+      t('footer.mediaTechPrefix') +
+      '</span> ' +
+      '<a class="footer-media-domain" href="https://ksvg.com.cn" target="_blank" rel="noopener noreferrer">ksvg.com.cn</a> ' +
+      '<span data-i18n="footer.mediaTechSuffix">' +
+      t('footer.mediaTechSuffix') +
+      '</span>' +
+      '</p>' +
+      '</div>' +
+      '<button class="footer-cookie-settings" type="button" data-cookie-settings data-i18n="cookies.manage">' +
+      t('cookies.manage') +
+      '</button>' +
       '</div>' +
       '</div>' +
       '</footer>'

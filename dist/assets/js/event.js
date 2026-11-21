@@ -8,6 +8,7 @@
   if (!i18n || !root) return;
 
   var eventData = null;
+  var sponsors = null;
   var statusOverride = null;
   var lastError = null;
   var toastTimer = null;
@@ -433,11 +434,50 @@
   }
 
   function renderSponsors() {
+    if (!sponsors || !sponsors.length) return '';
+
+    var tiles = sponsors
+      .map(function (sponsor) {
+        var theme = sponsor.theme === 'dark' ? 'dark' : 'light';
+        return (
+          '<button class="event-sponsor-tile event-sponsor-tile--' +
+          theme +
+          '" type="button" aria-pressed="false" aria-label="' +
+          escapeAttr(sponsor.name) +
+          '"><img src="' +
+          escapeAttr(sponsor.logo) +
+          '" alt="' +
+          escapeAttr(sponsor.name) +
+          '" loading="eager" decoding="async"></button>'
+        );
+      })
+      .join('');
+
     return (
       '<section class="sponsor-strip" aria-label="' +
-      escapeAttr(i18n.t('event.partners')) +
-      '"><div class="sponsor-inner"><img class="sponsor-banner" src="/images/sponsos-banner.png" alt="KCVA sponsors" width="2400" height="160" loading="lazy" decoding="async" onerror="this.parentElement.style.display=\'none\'"></div></section>'
+      escapeAttr(i18n.t('sponsorship.partnersTitle')) +
+      '"><div class="sponsor-inner"><div class="sponsor-strip-head"><p class="sponsor-strip-label">' +
+      escapeHtml(i18n.t('sponsorship.partnersTitle')) +
+      '</p><p class="sponsor-strip-hint">' +
+      escapeHtml(i18n.t('event.sponsorHint')) +
+      '</p></div><div class="event-sponsor-grid">' +
+      tiles +
+      '</div></div></section>'
     );
+  }
+
+  function loadSponsors() {
+    return fetch('/data/sponsors.json', { cache: 'no-cache', headers: { Accept: 'application/json' } })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Unable to load sponsors');
+        return response.json();
+      })
+      .then(function (data) {
+        sponsors = Array.isArray(data) ? data : [];
+      })
+      .catch(function () {
+        sponsors = [];
+      });
   }
 
   function tableHeaders() {
@@ -716,13 +756,6 @@
         heroImage.style.display = 'none';
       });
     }
-
-    var sponsorImage = root.querySelector('.sponsor-inner img');
-    if (sponsorImage) {
-      sponsorImage.addEventListener('error', function () {
-        sponsorImage.parentElement.style.display = 'none';
-      });
-    }
   }
 
   function scrollToHash() {
@@ -822,7 +855,18 @@
 
   i18n.ready.then(function () {
     statusOverride = getStatusOverride();
-    loadEvent();
+    loadSponsors().then(loadEvent);
+  });
+
+  root.addEventListener('click', function (event) {
+    var tile = event.target.closest('.event-sponsor-tile');
+    if (!tile) return;
+    root.querySelectorAll('.event-sponsor-tile').forEach(function (item) {
+      item.classList.remove('is-active');
+      item.setAttribute('aria-pressed', 'false');
+    });
+    tile.classList.add('is-active');
+    tile.setAttribute('aria-pressed', 'true');
   });
 
   document.addEventListener('kcva:languagechange', function () {

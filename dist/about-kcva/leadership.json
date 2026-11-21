@@ -9,12 +9,13 @@
     "bio": {
       "en": "Benze.W is the Founder & CEO of KC Varsity Association. He leads the league's overall strategy, partnerships, and tournament development, creating a platform where student-athletes can compete with pride and purpose.",
       "zh": "Benze.W 是 KC Varsity Association 的创始人兼首席执行官，负责联赛整体战略、合作拓展与赛事发展，致力于为学生运动员打造一个兼具荣誉感与成长价值的竞技平台。"
-    }
+    },
+    "image": "/images/team/benze.jpg"
   },
   {
     "name": "Tony.J",
     "role": {
-      "en": "Chief Technology Officer (CTO)",
+      "en": "Chief Technology Officer",
       "zh": "首席技术官"
     },
     "category": "executive",
@@ -25,43 +26,47 @@
     "externalRole": {
       "en": "KSVG Media Service Lead",
       "zh": "KSVG 媒体服务负责人"
-    }
+    },
+    "image": "/images/team/tony.jpg"
   },
   {
     "name": "Katherine.Y",
     "role": {
-      "en": "Chief Operating Officer (COO)",
+      "en": "Chief Operating Officer",
       "zh": "首席运营官"
     },
     "category": "executive",
     "bio": {
       "en": "Katherine.Y serves as Chief Operating Officer, overseeing event planning, venue coordination, and match-day delivery across the KCVA season. She keeps organizers, partners, and campus teams aligned around a consistent tournament standard.",
       "zh": "Katherine.Y 担任首席运营官，统筹 KCVA 赛季的赛事策划、场馆协调与比赛日执行，确保组织者、合作伙伴与校园团队围绕统一的赛事标准协同推进。"
-    }
+    },
+    "image": "/images/team/katherine.jpg"
   },
   {
-    "name": "Ivory.Z",
+    "name": "Ivory.C",
     "role": {
-      "en": "Chief Commercial Officer (CCO)",
+      "en": "Chief Commercial Officer",
       "zh": "首席商务官"
     },
     "category": "executive",
     "bio": {
-      "en": "Ivory.Z serves as Chief Commercial Officer, leading partnership strategy, sponsor relationships, and commercial growth. She builds long-term collaborations that connect brands with KCVA's student and campus communities.",
-      "zh": "Ivory.Z 担任首席商务官，负责合作战略、赞助商关系与商业增长，建立连接品牌与 KCVA 学生及校园社群的长期合作。"
-    }
+      "en": "Ivory.C serves as Chief Commercial Officer, leading partnership strategy, sponsor relationships, and commercial growth. She builds long-term collaborations that connect brands with KCVA's student and campus communities.",
+      "zh": "Ivory.C 担任首席商务官，负责合作战略、赞助商关系与商业增长，建立连接品牌与 KCVA 学生及校园社群的长期合作。"
+    },
+    "image": "/images/team/ivory.jpg"
   },
   {
     "name": "Susanna.Y",
     "role": {
-      "en": "CMO · Business Lead",
-      "zh": "首席营销官兼商务主管"
+      "en": "CMO\nBusiness Lead",
+      "zh": "首席营销官\n商务主管"
     },
     "category": "business",
     "bio": {
       "en": "Susanna.Y serves as CMO and Business Lead, directing KCVA's marketing, brand communication, and campus engagement. She translates the league's tournament platform into campaigns and partnerships that reach schools and families.",
       "zh": "Susanna.Y 担任首席营销官兼商务主管，负责 KCVA 的市场营销、品牌传播与校园互动，将联赛赛事平台转化为触达学校与家庭的传播活动及合作项目。"
-    }
+    },
+    "image": "/images/team/susanna.jpg"
   },
   {
     "name": "Jiarui.C",
@@ -73,7 +78,8 @@
     "bio": {
       "en": "Jiarui.C supports business operations at KCVA, coordinating partner communication, commercial planning, and event delivery. He helps partnership programs move smoothly from concept to tournament day.",
       "zh": "Jiarui.C 负责支持 KCVA 商务运营，协调合作伙伴沟通、商业策划与赛事执行，推动合作项目从方案到比赛日顺利落地。"
-    }
+    },
+    "image": "/images/team/jiarui.jpg"
   },
   {
     "name": "Justin.P",
@@ -85,31 +91,34 @@
     "bio": {
       "en": "Justin.P supports business operations and on-site partner delivery. He works with brands and campus teams to ensure activations, signage, and event commitments are executed clearly and on schedule.",
       "zh": "Justin.P 负责支持商务运营与现场合作伙伴执行，与品牌及校园团队协作，确保互动活动、物料与赛事权益清晰、按时落地。"
-    }
+    },
+    "image": "/images/team/justin.jpg"
   },
   {
     "name": "Abby.W",
     "role": {
-      "en": "Master of Ceremonies · Operations Staff",
-      "zh": "赛事主持与现场统筹"
+      "en": "Master of Ceremonies\nOperations Staff",
+      "zh": "赛事主持\n现场统筹"
     },
     "category": "operations",
     "bio": {
       "en": "Abby.W serves as Master of Ceremonies and Operations Staff, hosting KCVA tournaments and supporting on-site event flow. She guides the stage program, announcements, and participant experience throughout the day.",
       "zh": "Abby.W 担任赛事主持与现场统筹，负责 KCVA 赛事主持及现场流程支持，统筹舞台环节、现场播报与参赛者体验。"
-    }
+    },
+    "image": "/images/team/abby.jpg"
   },
   {
     "name": "Courtney.Z",
     "role": {
-      "en": "Master of Ceremonies · Operations Staff",
-      "zh": "赛事主持与现场统筹"
+      "en": "Master of Ceremonies\nOperations Staff",
+      "zh": "赛事主持\n现场统筹"
     },
     "category": "operations",
     "bio": {
       "en": "Courtney.Z serves as Master of Ceremonies and Operations Staff, hosting KCVA tournaments and supporting on-site coordination. She keeps the event schedule, presentations, and participant moments running smoothly.",
       "zh": "Courtney.Z 担任赛事主持与现场统筹，负责 KCVA 赛事主持及现场协调，确保赛事日程、展示环节与参赛者时刻顺畅进行。"
-    }
+    },
+    "image": "/images/team/courtney.jpg"
   },
   {
     "name": "Chris.D",
@@ -121,18 +130,20 @@
     "bio": {
       "en": "Chris.D serves as an On-Site Operations Specialist, coordinating venue setup, match flow, and event logistics. He supports teams, officials, and guests throughout tournament day.",
       "zh": "Chris.D 担任现场赛事运营，负责场馆搭建、比赛流程与赛事物流协调，在比赛日为球队、裁判与来宾提供支持。"
-    }
+    },
+    "image": "/images/team/chris.jpg"
   },
   {
-    "name": "Alissa",
+    "name": "Alissa.L",
     "role": {
-      "en": "Operations Associate",
-      "zh": "赛事运营统筹"
+      "en": "On-Site Operations Specialist",
+      "zh": "现场运营专员"
     },
     "category": "operations",
     "bio": {
-      "en": "Alissa serves as an Operations Associate, supporting event logistics, team coordination, and venue operations. She helps ensure that tournament-day details are delivered consistently for every participant.",
-      "zh": "Alissa 担任赛事运营统筹，支持赛事物流、球队协调与场馆运营，确保比赛日的每个细节都能稳定呈现给所有参与者。"
-    }
+      "en": "Alissa.L serves as an On-Site Operations Specialist, supporting event logistics, team coordination, and venue operations. She helps ensure that tournament-day details are delivered consistently for every participant.",
+      "zh": "Alissa.L 担任现场运营专员，支持赛事物流、球队协调与场馆运营，确保比赛日的每个细节都能稳定呈现给所有参与者。"
+    },
+    "image": "/images/team/alissa.jpg"
   }
 ]

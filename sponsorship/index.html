@@ -124,30 +124,42 @@
               <h3 class="sponsor-subtitle" id="sponsor-packages-title" data-i18n="sponsorship.packagesTitle">Per-Tournament Packages</h3>
             </div>
             <div class="package-grid">
-              <article class="package-item">
-                <div class="package-item-top">
+              <button class="package-item" type="button" data-package="title" aria-haspopup="dialog" aria-controls="package-detail">
+                <span class="package-item-top">
                   <span class="package-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 4 3 5-6 5 6 4-3-2 10H5L3 8Z"></path><path d="M5 21h14"></path></svg>
                   </span>
-                </div>
-                <h3 data-i18n="sponsorship.package1">Title Sponsor</h3>
-              </article>
-              <article class="package-item">
-                <div class="package-item-top">
+                </span>
+                <span class="package-title" data-i18n="sponsorship.package1">Title Sponsor</span>
+                <span class="package-more">
+                  <span data-i18n="sponsorship.learnMore">Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                </span>
+              </button>
+              <button class="package-item" type="button" data-package="court" aria-haspopup="dialog" aria-controls="package-detail">
+                <span class="package-item-top">
                   <span class="package-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"></rect><path d="M12 6v12M3 12h18M6 9h12M6 15h12"></path></svg>
                   </span>
-                </div>
-                <h3 data-i18n="sponsorship.package2">Court Sponsor</h3>
-              </article>
-              <article class="package-item">
-                <div class="package-item-top">
+                </span>
+                <span class="package-title" data-i18n="sponsorship.package2">Court Sponsor</span>
+                <span class="package-more">
+                  <span data-i18n="sponsorship.learnMore">Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                </span>
+              </button>
+              <button class="package-item" type="button" data-package="partner" aria-haspopup="dialog" aria-controls="package-detail">
+                <span class="package-item-top">
                   <span class="package-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l3 3h3l3-3h3"></path><path d="M8 12V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5M4 12v6h16v-6"></path></svg>
                   </span>
-                </div>
-                <h3 data-i18n="sponsorship.package3">Official Partner</h3>
-              </article>
+                </span>
+                <span class="package-title" data-i18n="sponsorship.package3">Official Partner</span>
+                <span class="package-more">
+                  <span data-i18n="sponsorship.learnMore">Learn More</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                </span>
+              </button>
             </div>
           </section>
 
@@ -157,12 +169,15 @@
             </div>
             <ol class="exposure-list">
               <li>
+                <span class="exposure-number" aria-hidden="true">01</span>
                 <p data-i18n="sponsorship.exposure1">On-site A-boards, court-side banners, and media backdrop boards.</p>
               </li>
               <li>
+                <span class="exposure-number" aria-hidden="true">02</span>
                 <p data-i18n="sponsorship.exposure2">Live photo gallery watermark exposure (tens of thousands of student and parent impressions).</p>
               </li>
               <li>
+                <span class="exposure-number" aria-hidden="true">03</span>
                 <p data-i18n="sponsorship.exposure3">Official award presentation and custom player welcome packages.</p>
               </li>
             </ol>
@@ -212,44 +227,40 @@
           </section>
 
           <section class="contact-section" id="contact" aria-labelledby="sponsor-contact-title">
-            <h2 class="contact-section-title" id="sponsor-contact-title" data-i18n="sponsorship.contactTitle">Contact</h2>
-            <div class="contact-grid">
-              <article class="contact-card">
+            <div class="contact-heading">
+              <h2 class="contact-section-title" id="sponsor-contact-title" data-i18n="sponsorship.contactTitle">Contact</h2>
+              <p class="contact-intro" data-i18n="sponsorship.contactIntro">For partnership, media, and event enquiries, reach the KCVA team directly.</p>
+            </div>
+            <div class="contact-panel">
+              <article class="contact-row">
                 <span class="contact-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.4 9.4 0 0 1-3.8-.8L3 21l1.9-5.2A8.4 8.4 0 1 1 21 11.5Z"></path></svg>
                 </span>
-                <h3 data-i18n="sponsorship.wechatTitle">WeChat Contact</h3>
-                <p class="contact-value">15858204360</p>
+                <div class="contact-row-copy">
+                  <h3 data-i18n="sponsorship.wechatTitle">WeChat Contact</h3>
+                  <p class="contact-value">15858204360</p>
+                </div>
                 <div class="contact-actions">
-                  <button
-                    class="btn btn-outline"
-                    type="button"
-                    data-copy="15858204360"
-                    data-copy-message="sponsorship.copiedWechat"
-                  >
+                  <button class="btn btn-outline" type="button" data-copy="15858204360" data-copy-message="sponsorship.copiedWechat">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg>
                     <span data-i18n="sponsorship.copyWechat">Copy WeChat ID</span>
                   </button>
                 </div>
               </article>
-
-              <article class="contact-card">
+              <article class="contact-row">
                 <span class="contact-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
                 </span>
-                <h3 data-i18n="sponsorship.emailTitle">Partnership Feedback Email</h3>
-                <p class="contact-value">support@kcva.com.cn</p>
+                <div class="contact-row-copy">
+                  <h3 data-i18n="sponsorship.emailTitle">Partnership Feedback Email</h3>
+                  <p class="contact-value">support@kcva.com.cn</p>
+                </div>
                 <div class="contact-actions">
                   <a class="btn btn-solid" href="mailto:support@kcva.com.cn">
                     <span data-i18n="sponsorship.sendEmail">Send Email</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
                   </a>
-                  <button
-                    class="btn btn-outline"
-                    type="button"
-                    data-copy="support@kcva.com.cn"
-                    data-copy-message="sponsorship.copiedEmail"
-                  >
+                  <button class="btn btn-outline" type="button" data-copy="support@kcva.com.cn" data-copy-message="sponsorship.copiedEmail">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg>
                     <span data-i18n="sponsorship.copyEmail">Copy Email</span>
                   </button>
@@ -261,6 +272,23 @@
       </section>
     </main>
 
+
+    <div class="package-modal" id="package-detail" hidden>
+      <div class="package-modal-backdrop" data-package-close aria-hidden="true"></div>
+      <div class="package-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="package-detail-title" tabindex="-1">
+        <button class="package-modal-close" type="button" data-package-close aria-label="Close package details" data-i18n-aria-label="sponsorship.close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <p class="package-modal-eyebrow" data-i18n="sponsorship.packagesTitle">Per-Tournament Packages</p>
+        <h2 class="package-modal-title" id="package-detail-title"></h2>
+        <p class="package-modal-summary"></p>
+        <ul class="package-modal-list"></ul>
+        <div class="package-modal-actions">
+          <a class="btn btn-solid" href="mailto:support@kcva.com.cn" data-i18n="sponsorship.packageCta">Discuss this package</a>
+          <button class="btn btn-outline" type="button" data-package-close data-i18n="sponsorship.close">Close</button>
+        </div>
+      </div>
+    </div>
     <div id="global-footer"></div>
   </body>
 </html>

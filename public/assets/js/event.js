@@ -456,7 +456,7 @@
     return (
       '<section class="sponsor-strip" aria-label="' +
       escapeAttr(i18n.t('sponsorship.partnersTitle')) +
-      '"><div class="sponsor-inner"><div class="sponsor-strip-head"><p class="sponsor-strip-label">' +
+      '"><div class="shell"><div class="sponsor-strip-head"><p class="sponsor-strip-label">' +
       escapeHtml(i18n.t('sponsorship.partnersTitle')) +
       '</p><p class="sponsor-strip-hint">' +
       escapeHtml(i18n.t('event.sponsorHint')) +

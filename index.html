@@ -7,6 +7,14 @@
     <meta name="description" content="KCVA is a high school varsity sports league building competitive volleyball and ultimate frisbee tournaments for school teams.">
     <title>Home | KCVA</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        if (path === '/shop' || /^\/about-kcva\/[^/.]+$/.test(path)) {
+          window.location.replace(path + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="/assets/css/main.css">
     <script defer src="/assets/js/i18n.js"></script>
     <script defer src="/assets/js/layout.js"></script>
@@ -95,7 +103,7 @@
                 <p class="story-text" data-i18n="home.story3Body">
                   KCVA varsity gear, commemorative tournament jerseys, and athletic accessories.
                 </p>
-                <a class="story-link" href="https://shop.kcva.com.cn" target="_blank" rel="noopener noreferrer">
+                <a class="story-link" href="/shop">
                   <span data-i18n="home.story3Link">Visit Shop</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
                 </a>

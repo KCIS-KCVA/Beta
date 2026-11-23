@@ -8,8 +8,6 @@
 
   var grid = null;
   var leaders = null;
-  var modal = null;
-  var lastTrigger = null;
 
   var TIERS = [
     { key: 'executive', titleKey: 'about.tierExecutive' },
@@ -30,9 +28,20 @@
   }
 
   function tierFor(category) {
-    return TIERS.filter(function (tier) {
-      return tier.key === category;
-    })[0] || TIERS[2];
+    return (
+      TIERS.filter(function (tier) {
+        return tier.key === category;
+      })[0] || TIERS[2]
+    );
+  }
+
+  function slugFor(leader) {
+    if (leader.slug) return leader.slug;
+    return String(leader.name || '')
+      .toLowerCase()
+      .replace(/[\s.]+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
   }
 
   function roleLines(leader) {
@@ -56,21 +65,15 @@
       .join('');
   }
 
-  function arrowIcon() {
+  function leaderMarkup(leader) {
+    var slug = slugFor(leader);
     return (
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>'
-    );
-  }
-
-  function leaderMarkup(leader, index) {
-    var image = leader.image || '';
-    return (
-      '<button class="leader-card" type="button" data-leader-index="' +
-      index +
-      '" aria-haspopup="dialog" aria-controls="leader-profile">' +
-      (image
+      '<a class="leader-card" href="/about-kcva/' +
+      encodeURIComponent(slug) +
+      '">' +
+      (leader.image
         ? '<span class="leader-photo-wrap"><img class="leader-photo" src="' +
-          escapeHtml(image) +
+          escapeHtml(leader.image) +
           '" alt="' +
           escapeHtml(leader.name) +
           '" loading="lazy" decoding="async"></span>'
@@ -82,12 +85,8 @@
       '<span class="leader-role">' +
       roleMarkup(leader) +
       '</span>' +
-      '<span class="leader-open">' +
-      escapeHtml(i18n.t('about.viewProfile')) +
-      arrowIcon() +
       '</span>' +
-      '</span>' +
-      '</button>'
+      '</a>'
     );
   }
 
@@ -95,13 +94,9 @@
     if (!grid || !leaders) return;
     grid.setAttribute('aria-busy', 'false');
     grid.innerHTML = TIERS.map(function (tier) {
-      var tierLeaders = leaders
-        .map(function (leader, index) {
-          return { leader: leader, index: index };
-        })
-        .filter(function (item) {
-          return tierFor(item.leader.category).key === tier.key;
-        });
+      var tierLeaders = leaders.filter(function (leader) {
+        return tierFor(leader.category).key === tier.key;
+      });
 
       if (!tierLeaders.length) return '';
 
@@ -113,61 +108,10 @@
         escapeHtml(i18n.t(tier.titleKey)) +
         '</h3></div>' +
         '<div class="leader-tier-cards">' +
-        tierLeaders
-          .map(function (item) {
-            return leaderMarkup(item.leader, item.index);
-          })
-          .join('') +
+        tierLeaders.map(leaderMarkup).join('') +
         '</div></section>'
       );
     }).join('');
-  }
-
-  function setBackgroundInert(inert) {
-    ['#global-header', '#main', '#global-footer'].forEach(function (selector) {
-      var element = document.querySelector(selector);
-      if (!element) return;
-      if (inert) element.setAttribute('inert', '');
-      else element.removeAttribute('inert');
-    });
-  }
-
-  function closeProfile(returnFocus) {
-    if (!modal || modal.hidden) return;
-    modal.hidden = true;
-    document.body.classList.remove('no-scroll');
-    setBackgroundInert(false);
-    if (returnFocus && lastTrigger && document.contains(lastTrigger)) {
-      lastTrigger.focus();
-    }
-    lastTrigger = null;
-  }
-
-  function openProfile(index, trigger) {
-    if (!modal || !leaders || !leaders[index]) return;
-    var leader = leaders[index];
-    var tier = tierFor(leader.category);
-    var photo = modal.querySelector('.leader-modal-photo');
-
-    modal.querySelector('.leader-modal-tier').textContent = i18n.t(tier.titleKey);
-    modal.querySelector('.leader-modal-name').textContent = leader.name;
-    modal.querySelector('.leader-modal-role').innerHTML = roleMarkup(leader);
-    modal.querySelector('.leader-modal-bio').textContent = i18n.tText(leader.bio);
-
-    if (photo) {
-      photo.src = leader.image || '';
-      photo.alt = leader.name;
-      photo.hidden = !leader.image;
-    }
-
-    lastTrigger = trigger || null;
-    modal.hidden = false;
-    document.body.classList.add('no-scroll');
-    setBackgroundInert(true);
-    window.setTimeout(function () {
-      var closeButton = modal.querySelector('.leader-modal-close');
-      if (closeButton) closeButton.focus();
-    }, 20);
   }
 
   function renderError() {
@@ -211,34 +155,9 @@
 
   i18n.ready.then(function () {
     grid = document.getElementById('leadership-grid');
-    modal = document.getElementById('leader-profile');
-
-    if (grid) {
-      grid.addEventListener('click', function (event) {
-        var card = event.target.closest('.leader-card');
-        if (!card) return;
-        openProfile(Number(card.getAttribute('data-leader-index')), card);
-      });
-    }
-
-    if (modal) {
-      modal.querySelectorAll('[data-leader-close]').forEach(function (control) {
-        control.addEventListener('click', function () {
-          closeProfile(true);
-        });
-      });
-    }
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && modal && !modal.hidden) {
-        closeProfile(true);
-      }
-    });
-
-    loadLeaders();
+    if (grid) loadLeaders();
 
     document.addEventListener('kcva:languagechange', function () {
-      closeProfile(false);
       if (leaders) renderLeaders();
       else if (grid && grid.querySelector('.leadership-state--error')) renderError();
     });

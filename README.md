@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-`http://localhost:5173/` opens the KCVA landing page. The primary event is at `http://localhost:5173/events/volleywoods-25-26/`. Shop is an external link to `https://shop.kcva.com.cn`; there is no local shop page.
+`http://localhost:5173/` opens the KCVA landing page. The primary event is at `http://localhost:5173/events/volleywoods-25-26/`. Shop is a local coming-soon page at `/shop`.
 
 Production build:
 
@@ -95,6 +95,7 @@ The compiled CSS is committed so plain static preview servers (including the por
 - `events/index.html`
 - `about-kcva/index.html`
 - `sponsorship/index.html`
+- `shop/index.html`
 - `404.html`
 - Every `events/*/index.html`
 

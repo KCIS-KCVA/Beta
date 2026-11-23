@@ -2,15 +2,20 @@
   {
     "name": "Benze.W",
     "role": {
-      "en": "Founder & CEO",
+      "en": "Founder and CEO",
       "zh": "创始人兼首席执行官"
     },
     "category": "executive",
     "bio": {
-      "en": "Benze.W is the Founder & CEO of KC Varsity Association. He leads the league's overall strategy, partnerships, and tournament development, creating a platform where student-athletes can compete with pride and purpose.",
+      "en": "Benze.W is the Founder and CEO of KC Varsity Association. He leads the league's overall strategy, partnerships, and tournament development, creating a platform where student-athletes can compete with pride and purpose.",
       "zh": "Benze.W 是 KC Varsity Association 的创始人兼首席执行官，负责联赛整体战略、合作拓展与赛事发展，致力于为学生运动员打造一个兼具荣誉感与成长价值的竞技平台。"
     },
-    "image": "/images/team/benze.jpg"
+    "image": "/images/team/benze.jpg",
+    "slug": "benze-w",
+    "bio2": {
+      "en": "He works closely with the executive team and event partners to keep the league’s strategy, tournament calendar, and student experience aligned.",
+      "zh": "他与核心管理团队及赛事合作伙伴紧密协作，确保联赛战略、赛事日程与学生体验保持一致。"
+    }
   },
   {
     "name": "Tony.J",
@@ -27,7 +32,12 @@
       "en": "KSVG Media Service Lead",
       "zh": "KSVG 媒体服务负责人"
     },
-    "image": "/images/team/tony.jpg"
+    "image": "/images/team/tony.jpg",
+    "slug": "tony-j",
+    "bio2": {
+      "en": "He coordinates the technical and media teams across event days, keeping digital platforms, live production, and visual archives consistent from setup to publication.",
+      "zh": "他统筹赛事期间的技术与媒体团队，确保数字平台、现场制作与影像档案从搭建到发布保持统一标准。"
+    }
   },
   {
     "name": "Katherine.Y",
@@ -40,7 +50,12 @@
       "en": "Katherine.Y serves as Chief Operating Officer, overseeing event planning, venue coordination, and match-day delivery across the KCVA season. She keeps organizers, partners, and campus teams aligned around a consistent tournament standard.",
       "zh": "Katherine.Y 担任首席运营官，统筹 KCVA 赛季的赛事策划、场馆协调与比赛日执行，确保组织者、合作伙伴与校园团队围绕统一的赛事标准协同推进。"
     },
-    "image": "/images/team/katherine.jpg"
+    "image": "/images/team/katherine.jpg",
+    "slug": "katherine-y",
+    "bio2": {
+      "en": "She works with venue teams and event staff to turn the season plan into repeatable match-day procedures across every host campus.",
+      "zh": "她与场馆团队及赛事工作人员协作，将赛季规划转化为各承办校园可复用的比赛日流程。"
+    }
   },
   {
     "name": "Ivory.C",
@@ -53,7 +68,12 @@
       "en": "Ivory.C serves as Chief Commercial Officer, leading partnership strategy, sponsor relationships, and commercial growth. She builds long-term collaborations that connect brands with KCVA's student and campus communities.",
       "zh": "Ivory.C 担任首席商务官，负责合作战略、赞助商关系与商业增长，建立连接品牌与 KCVA 学生及校园社群的长期合作。"
     },
-    "image": "/images/team/ivory.jpg"
+    "image": "/images/team/ivory.jpg",
+    "slug": "ivory-c",
+    "bio2": {
+      "en": "She works with the commercial and campus teams to turn partnerships into long-term collaborations that support the league’s growth.",
+      "zh": "她与商务及校园团队合作，将合作项目转化为支持联赛长期发展的稳定伙伴关系。"
+    }
   },
   {
     "name": "Susanna.Y",
@@ -66,7 +86,12 @@
       "en": "Susanna.Y serves as CMO and Business Lead, directing KCVA's marketing, brand communication, and campus engagement. She translates the league's tournament platform into campaigns and partnerships that reach schools and families.",
       "zh": "Susanna.Y 担任首席营销官兼商务主管，负责 KCVA 的市场营销、品牌传播与校园互动，将联赛赛事平台转化为触达学校与家庭的传播活动及合作项目。"
     },
-    "image": "/images/team/susanna.jpg"
+    "image": "/images/team/susanna.jpg",
+    "slug": "susanna-y",
+    "bio2": {
+      "en": "She works across the marketing and partnership teams to keep campaign messaging, campus outreach, and event promotion connected.",
+      "zh": "她协同市场与商务团队，确保传播主题、校园触达与赛事推广形成连贯的整体。"
+    }
   },
   {
     "name": "Jiarui.C",
@@ -79,7 +104,12 @@
       "en": "Jiarui.C supports business operations at KCVA, coordinating partner communication, commercial planning, and event delivery. He helps partnership programs move smoothly from concept to tournament day.",
       "zh": "Jiarui.C 负责支持 KCVA 商务运营，协调合作伙伴沟通、商业策划与赛事执行，推动合作项目从方案到比赛日顺利落地。"
     },
-    "image": "/images/team/jiarui.jpg"
+    "image": "/images/team/jiarui.jpg",
+    "slug": "jiarui-c",
+    "bio2": {
+      "en": "He works alongside partners and event staff to keep timelines, deliverables, and on-site commitments aligned.",
+      "zh": "他与合作伙伴及赛事团队并肩工作，确保时间节点、交付内容与现场权益保持一致。"
+    }
   },
   {
     "name": "Justin.P",
@@ -92,7 +122,12 @@
       "en": "Justin.P supports business operations and on-site partner delivery. He works with brands and campus teams to ensure activations, signage, and event commitments are executed clearly and on schedule.",
       "zh": "Justin.P 负责支持商务运营与现场合作伙伴执行，与品牌及校园团队协作，确保互动活动、物料与赛事权益清晰、按时落地。"
     },
-    "image": "/images/team/justin.jpg"
+    "image": "/images/team/justin.jpg",
+    "slug": "justin-p",
+    "bio2": {
+      "en": "He coordinates with brands and campus teams on activation logistics, signage, and event-day delivery.",
+      "zh": "他与品牌及校园团队协调互动活动物流、物料呈现与比赛日执行。"
+    }
   },
   {
     "name": "Abby.W",
@@ -105,7 +140,12 @@
       "en": "Abby.W serves as Master of Ceremonies and Operations Staff, hosting KCVA tournaments and supporting on-site event flow. She guides the stage program, announcements, and participant experience throughout the day.",
       "zh": "Abby.W 担任赛事主持与现场统筹，负责 KCVA 赛事主持及现场流程支持，统筹舞台环节、现场播报与参赛者体验。"
     },
-    "image": "/images/team/abby.jpg"
+    "image": "/images/team/abby.jpg",
+    "slug": "abby-w",
+    "bio2": {
+      "en": "She works with the operations team on run-of-show, stage cues, and participant communications throughout the tournament.",
+      "zh": "她与运营团队协作，负责赛事流程、舞台提示与参赛者沟通。"
+    }
   },
   {
     "name": "Courtney.Z",
@@ -118,7 +158,12 @@
       "en": "Courtney.Z serves as Master of Ceremonies and Operations Staff, hosting KCVA tournaments and supporting on-site coordination. She keeps the event schedule, presentations, and participant moments running smoothly.",
       "zh": "Courtney.Z 担任赛事主持与现场统筹，负责 KCVA 赛事主持及现场协调，确保赛事日程、展示环节与参赛者时刻顺畅进行。"
     },
-    "image": "/images/team/courtney.jpg"
+    "image": "/images/team/courtney.jpg",
+    "slug": "courtney-z",
+    "bio2": {
+      "en": "She coordinates with organizers and venue staff to keep presentations, announcements, and participant moments on schedule.",
+      "zh": "她与组织者及场馆团队协调，确保展示环节、现场播报与参赛者时刻按计划进行。"
+    }
   },
   {
     "name": "Chris.D",
@@ -131,7 +176,12 @@
       "en": "Chris.D serves as an On-Site Operations Specialist, coordinating venue setup, match flow, and event logistics. He supports teams, officials, and guests throughout tournament day.",
       "zh": "Chris.D 担任现场赛事运营，负责场馆搭建、比赛流程与赛事物流协调，在比赛日为球队、裁判与来宾提供支持。"
     },
-    "image": "/images/team/chris.jpg"
+    "image": "/images/team/chris.jpg",
+    "slug": "chris-d",
+    "bio2": {
+      "en": "He works with venue and match officials to resolve on-the-ground issues and keep the tournament running safely and on time.",
+      "zh": "他与场馆及裁判团队协作，处理现场问题，保障赛事安全、按时进行。"
+    }
   },
   {
     "name": "Alissa.L",
@@ -144,6 +194,11 @@
       "en": "Alissa.L serves as an On-Site Operations Specialist, supporting event logistics, team coordination, and venue operations. She helps ensure that tournament-day details are delivered consistently for every participant.",
       "zh": "Alissa.L 担任现场运营专员，支持赛事物流、球队协调与场馆运营，确保比赛日的每个细节都能稳定呈现给所有参与者。"
     },
-    "image": "/images/team/alissa.jpg"
+    "image": "/images/team/alissa.jpg",
+    "slug": "alissa-l",
+    "bio2": {
+      "en": "She works with the operations team on setup, team check-in, and venue support so each event day runs smoothly.",
+      "zh": "她与运营团队协作，负责现场搭建、球队签到与场馆支持，让每个比赛日顺畅运行。"
+    }
   }
 ]

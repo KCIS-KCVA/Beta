@@ -16,7 +16,21 @@ function discoverHtmlInputs(): Record<string, string> {
   addPage('events-index', 'events/index.html')
   addPage('about-kcva', 'about-kcva/index.html')
   addPage('sponsorship', 'sponsorship/index.html')
+  addPage('shop', 'shop/index.html')
   addPage('404', '404.html')
+
+  const aboutRoot = path.resolve(rootDir, 'about-kcva')
+  if (fs.existsSync(aboutRoot)) {
+    fs.readdirSync(aboutRoot, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .forEach((entry) => {
+        const pagePath = path.join(aboutRoot, entry.name, 'index.html')
+        if (fs.existsSync(pagePath)) {
+          inputs[`profile-${entry.name}`] = pagePath
+        }
+      })
+  }
 
   const eventsRoot = path.resolve(rootDir, 'events')
   if (fs.existsSync(eventsRoot)) {
@@ -32,6 +46,49 @@ function discoverHtmlInputs(): Record<string, string> {
   }
 
   return inputs
+}
+
+
+function directoryTrailingSlashPlugin(): Plugin {
+  const redirect = (req: any, res: any, next: () => void) => {
+    if (!req.url || (req.method !== 'GET' && req.method !== 'HEAD')) {
+      next()
+      return
+    }
+    let pathname = ''
+    let search = ''
+    try {
+      const url = new URL(req.url, 'http://localhost')
+      pathname = decodeURIComponent(url.pathname)
+      search = url.search
+    } catch (error) {
+      next()
+      return
+    }
+    if (pathname === '/' || pathname.endsWith('/') || path.extname(pathname)) {
+      next()
+      return
+    }
+    const normalized = pathname.replace(/^\/+/, '')
+    const candidate = path.resolve(rootDir, normalized, 'index.html')
+    if (!candidate.startsWith(rootDir + path.sep) || !fs.existsSync(candidate)) {
+      next()
+      return
+    }
+    res.statusCode = 301
+    res.setHeader('Location', pathname + '/' + search)
+    res.end()
+  }
+
+  return {
+    name: 'kcva-directory-trailing-slash',
+    configureServer(server) {
+      server.middlewares.use(redirect)
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(redirect)
+    },
+  }
 }
 
 function copyEventStaticAssets(): Plugin {
@@ -72,7 +129,7 @@ function copyEventStaticAssets(): Plugin {
 
 export default defineConfig({
   publicDir: 'public',
-  plugins: [copyEventStaticAssets()],
+  plugins: [directoryTrailingSlashPlugin(), copyEventStaticAssets()],
   build: {
     outDir: 'dist',
     emptyOutDir: true,

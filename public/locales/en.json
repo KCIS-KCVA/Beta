@@ -192,8 +192,8 @@
   "sponsorship.boyaDesc": "Official plush and merchandise partner for KCVA tournaments.",
   "sponsorship.aprisaDesc": "Brand partner supporting KCVA tournament programming and on-site engagement.",
   "about.tierExecutive": "Executive Leadership",
-  "about.tierBusiness": "Business & Commercial",
-  "about.tierOperations": "Operations & Events",
+  "about.tierBusiness": "Business and Commercial",
+  "about.tierOperations": "Operations and Events",
   "about.viewProfile": "View profile",
   "about.closeProfile": "Close profile",
   "about.paragraph3": "KCVA is more than a sports community. It is also a platform for international high school students across the Yangtze River Delta to connect, learn, and gain hands-on experience in business, event operations, sports culture, and photography.",
@@ -243,5 +243,16 @@
   "sponsorship.packageBenefit3a": "Logo on event communications and the sponsor wall",
   "sponsorship.packageBenefit3b": "On-site A-board or activation table",
   "sponsorship.packageBenefit3c": "Inclusion in post-event recap content",
-  "sponsorship.packageBenefit3d": "Custom activation options available on request"
+  "sponsorship.packageBenefit3d": "Custom activation options available on request",
+  "title.shop": "Shop",
+  "shop.eyebrow": "KCVA SHOP",
+  "shop.title": "Shop",
+  "shop.body": "Official KCVA gear, tournament collections, and campus essentials are on the way.",
+  "shop.status": "COMING SOON",
+  "shop.messageTitle": "The first collection is on its way.",
+  "shop.message": "We are preparing the first KCVA collection. The shop will open here soon.",
+  "shop.eventsCta": "Explore Events",
+  "profile.back": "Back to Leadership",
+  "profile.loading": "Loading profile…",
+  "profile.notFound": "Profile not found."
 }

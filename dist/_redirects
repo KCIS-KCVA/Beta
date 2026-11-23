@@ -1,9 +1,12 @@
-# Clean static folder routes for Cloudflare Pages.
-# Each route resolves to a real built index.html from the Vite multi-page build.
-/events /events/ 301
-/events/_template /events/_template/ 301
-/events/volleywoods-25-26 /events/volleywoods-25-26/ 301
-/sponsorship /sponsorship/ 301
-/about-kcva /about-kcva/ 301
-/about /about-kcva/ 301
-/about/* /about-kcva/:splat 301
+/shop /shop/ 301
+/about-kcva/benze-w /about-kcva/benze-w/ 301
+/about-kcva/tony-j /about-kcva/tony-j/ 301
+/about-kcva/katherine-y /about-kcva/katherine-y/ 301
+/about-kcva/ivory-c /about-kcva/ivory-c/ 301
+/about-kcva/susanna-y /about-kcva/susanna-y/ 301
+/about-kcva/jiarui-c /about-kcva/jiarui-c/ 301
+/about-kcva/justin-p /about-kcva/justin-p/ 301
+/about-kcva/abby-w /about-kcva/abby-w/ 301
+/about-kcva/courtney-z /about-kcva/courtney-z/ 301
+/about-kcva/chris-d /about-kcva/chris-d/ 301
+/about-kcva/alissa-l /about-kcva/alissa-l/ 301

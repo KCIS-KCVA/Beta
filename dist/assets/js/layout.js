@@ -42,7 +42,7 @@
       { key: 'nav.home', path: '/' },
       { key: 'nav.events', path: '/events/' },
       { key: 'nav.sponsorship', path: '/sponsorship/' },
-      { key: 'nav.shop', path: 'https://shop.kcva.com.cn', external: true },
+      { key: 'nav.shop', path: '/shop' },
       { key: 'nav.about', path: '/about-kcva/' },
     ];
 
@@ -174,7 +174,7 @@
       '">' +
       t('footer.sponsorship') +
       '</a></li>' +
-      '<li><a href="https://shop.kcva.com.cn" target="_blank" rel="noopener noreferrer">' +
+      '<li><a href="' + withLanguage('/shop') + '">' +
       t('footer.shop') +
       '</a></li>' +
       '<li><a href="' +

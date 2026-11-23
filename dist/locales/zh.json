@@ -243,5 +243,16 @@
   "sponsorship.packageBenefit3a": "赛事传播与赞助商墙上的 Logo 展示",
   "sponsorship.packageBenefit3b": "现场 A 字板或互动展位",
   "sponsorship.packageBenefit3c": "赛后回顾内容中的品牌露出",
-  "sponsorship.packageBenefit3d": "可按需求定制校园互动内容"
+  "sponsorship.packageBenefit3d": "可按需求定制校园互动内容",
+  "title.shop": "官方商店",
+  "shop.eyebrow": "KCVA 官方商店",
+  "shop.title": "官方商店",
+  "shop.body": "KCVA 官方装备、赛事系列与校园周边即将上线。",
+  "shop.status": "即将上线",
+  "shop.messageTitle": "首个系列正在准备中。",
+  "shop.message": "我们正在准备 KCVA 首个系列，商店即将在此开放。",
+  "shop.eventsCta": "浏览赛事",
+  "profile.back": "返回管理团队",
+  "profile.loading": "正在加载人物介绍…",
+  "profile.notFound": "未找到该人物介绍。"
 }
